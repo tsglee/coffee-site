@@ -1172,7 +1172,7 @@ window.COFFEE_SEED = {
     }
   ],
   "settings": {
-    "shopName": "四選淨豆",
+    "shopName": "一遇",
     "shippingFee": 60,
     "freeShipping": 1500,
     "carouselSeconds": 6,
