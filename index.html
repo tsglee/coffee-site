@@ -172,7 +172,7 @@ img,video,svg{max-width:100%}
 <body class="bg-paper text-ink antialiased selection:bg-outline-variant selection:text-primary">
 <a class="skip-link" href="#main-content">跳到主要內容</a>
 <!-- TopNavBar (Shared Component JSON Conformance) -->
-<header class="bg-surface-container-lowest/90 dark:bg-inverse-surface/90 backdrop-blur-md docked full-width top-0 sticky z-50 border-b border-outline-variant/30 dark:border-outline/20 shadow-sm dark:shadow-none">
+<header class="site-header z-50">
 <div class="max-w-7xl mx-auto px-5 md:px-margin-desktop py-space-md flex items-center justify-between">
 <!-- Brand Logo -->
 <a class="flex flex-col cursor-pointer transition-all duration-200 active:scale-95 group" href="index.html">
@@ -206,41 +206,26 @@ img,video,svg{max-width:100%}
 </div>
 </div>
 </header>
-<!-- Hero: a four-part editorial composition -->
+<!-- Full-screen coffee photography with a centered value proposition -->
 <main id="main-content">
 <section class="coffee-hero" aria-labelledby="hero-title">
-  <div class="hero-topline">
-    <span><span class="tiny-mark" aria-hidden="true">✷</span> 四次挑選，只留純粹。</span>
-    <span class="edition-label">THE ART OF PURE COFFEE / 01</span>
+  <div class="hero-background" aria-hidden="true">
+    <img src="assets/coffee-roast-hero.jpg" width="1672" height="941" alt="" fetchpriority="high" decoding="async"/>
   </div>
-  <div class="hero-composition">
-    <div class="hero-copy">
-      <p class="hero-eyebrow"><span></span> PURE SELECT. PURE FOCUS.</p>
-      <h1 id="hero-title">四次挑豆，<br/>一杯<span class="hero-word">乾淨</span><br/>的專注<span class="title-dot">。</span></h1>
-      <p class="hero-description">把繁雜留給我們，把純粹留給你。<br/>四道細緻挑豆工序，讓每個日常，<br class="desktop-break"/>都從一杯清透甘甜開始。</p>
-      <div class="hero-actions">
-        <a class="hero-buy" href="#products">探索本月咖啡 <span aria-hidden="true">↗</span></a>
-        <a class="hero-story" href="story.html">認識四次挑豆 <span aria-hidden="true">↗</span></a>
-      </div>
-      <div class="hero-note"><span aria-hidden="true">✷</span> 精品莊園豆 <span class="note-divider">/</span> 每週鮮烘出貨</div>
-    </div>
-    <div class="hero-art">
-      <span class="art-number" aria-hidden="true">04</span>
-      <div class="art-orbit" aria-hidden="true"></div>
-      <div class="coffee-photo">
-        <img src="assets/006e8999088e.jpg" width="512" height="279" alt="晨光下的陶瓷手沖濾杯與琥珀色咖啡，旁邊散落著挑選過的咖啡豆" fetchpriority="high"/>
-      </div>
-      <div class="purity-seal" aria-hidden="true">
-        <svg class="seal-ring" viewBox="0 0 120 120"><defs><path id="seal-circle" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs><text><textPath href="#seal-circle" textLength="276">FOUR TIMES SELECTED · PURE COFFEE · </textPath></text></svg>
-        <span>四選<br/>淨豆</span>
-      </div>
-      <div class="art-caption"><span>一杯純淨，來自四次用心。</span><span>FROM BEAN TO FOCUS ↗</span></div>
-      <span class="art-spark" aria-hidden="true">✷</span>
-      <div class="selection-label"><span class="label-kicker">THE PURE STANDARD</span><strong>4 次挑選<span> / </span>1 杯純粹</strong><span>人工手選 × 機器複選</span></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">PURE SELECT COFFEE</p>
+    <h1 id="hero-title">四次挑豆，<br/>一杯乾淨的專注。</h1>
+    <div class="hero-rule" aria-hidden="true"></div>
+    <p class="hero-description">把雜澀留在挑選裡，把甘甜留在杯中。<br/>四道嚴選，每週鮮烘。讓純淨的香氣，陪你專注每一天。</p>
+    <div class="hero-actions">
+      <a class="hero-buy" href="#products">探索本月咖啡 <span aria-hidden="true">→</span></a>
+      <a class="hero-story" href="story.html">認識四次挑豆 <span aria-hidden="true">→</span></a>
     </div>
   </div>
   <div class="hero-bottom">
-    <a href="#process" class="scroll-cue"><span aria-hidden="true">↓</span> 往下探索挑豆工藝</a>
+    <span class="hero-roast-note">四次嚴選 <span aria-hidden="true">/</span> 每週鮮烘</span>
+    <a href="#process" class="scroll-cue"><span>探索純淨工藝</span><span class="scroll-line" aria-hidden="true"></span></a>
     <button type="button" id="motion-toggle" aria-pressed="false"><span aria-hidden="true">Ⅱ</span> <span id="motion-label">暫停動畫</span></button>
   </div>
 </section>

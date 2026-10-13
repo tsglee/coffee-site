@@ -20,6 +20,13 @@
   }));
   setTheme(root.dataset.theme || 'terra');
 
+  const header = document.querySelector('.site-header');
+  const hero = document.querySelector('.coffee-hero');
+  const headerObserver = new IntersectionObserver(([entry]) => {
+    header.classList.toggle('is-scrolled', !entry.isIntersecting);
+  }, { rootMargin: '-90px 0px 0px 0px' });
+  headerObserver.observe(hero);
+
   const motionButton = document.getElementById('motion-toggle');
   const motionLabel = document.getElementById('motion-label');
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
