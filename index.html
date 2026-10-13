@@ -1,731 +1,108 @@
-<!DOCTYPE html>
-
-<html class="scroll-smooth" lang="zh-TW"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>四選淨豆 | Pure Select Coffee - 四次挑豆，一杯乾淨的專注</title>
-<!-- Google Fonts: Noto Serif TC & Inter -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Noto+Serif+TC:wght@400;500;600;700&amp;family=Noto+Serif:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet"/>
-<!-- Material Symbols Outlined -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS v3 with plugins -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Tailwind Config as specified in design system -->
-<script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          "colors": {
-            "primary-fixed-dim": "#ebbe9a",
-            "secondary-fixed-dim": "#bbccaa",
-            "tertiary": "#3f392f",
-            "on-secondary": "#ffffff",
-            "inverse-on-surface": "#ffede7",
-            "on-secondary-fixed": "#121f09",
-            "on-secondary-container": "#5a694d",
-            "on-tertiary": "#ffffff",
-            "surface-bright": "#fff8f6",
-            "outline-variant": "#d4c3b9",
-            "primary-fixed": "#ffdcc2",
-            "tertiary-fixed": "#ece1d2",
-            "surface": "#fff8f6",
-            "secondary": "#546347",
-            "error": "#ba1a1a",
-            "inverse-surface": "#392e2a",
-            "surface-container-lowest": "#ffffff",
-            "on-tertiary-container": "#ccc3b4",
-            "outline": "#82756b",
-            "on-tertiary-fixed-variant": "#4c463b",
-            "on-error-container": "#93000a",
-            "secondary-fixed": "#d7e8c5",
-            "surface-dim": "#e8d6d0",
-            "on-primary-fixed-variant": "#5f4025",
-            "surface-container-high": "#f7e4de",
-            "background": "#fff8f6",
-            "on-background": "#231916",
-            "inverse-primary": "#ebbe9a",
-            "tertiary-fixed-dim": "#cfc5b6",
-            "surface-container-highest": "#f1dfd8",
-            "primary": "#513419",
-            "secondary-container": "#d7e8c5",
-            "error-container": "#ffdad6",
-            "on-error": "#ffffff",
-            "on-secondary-fixed-variant": "#3d4b31",
-            "on-tertiary-fixed": "#201b12",
-            "surface-variant": "#f1dfd8",
-            "primary-container": "#6b4a2e",
-            "on-primary": "#ffffff",
-            "surface-container-low": "#fff1ec",
-            "on-background": "#231916",
-            "on-surface-variant": "#50453d",
-            "tertiary-container": "#575045",
-            "surface-tint": "#7a573a",
-            "on-primary-container": "#e9bb98",
-            "surface-container": "#fdeae3",
-            "on-primary-fixed": "#2d1601"
-          },
-          "borderRadius": {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "full": "9999px"
-          },
-          "spacing": {
-            "space-2xl": "4rem",
-            "gutter": "1.5rem",
-            "space-lg": "1.5rem",
-            "space-xl": "2.5rem",
-            "space-md": "1rem",
-            "space-sm": "0.5rem",
-            "gutter-desktop": "2rem",
-            "margin": "1.25rem",
-            "margin-tablet": "2.5rem",
-            "margin-desktop": "4rem",
-            "space-xs": "0.25rem",
-            "space-3xl": "6rem"
-          },
-          "fontFamily": {
-            "body-lg": ["Inter", "Noto Serif TC", "sans-serif"],
-            "label-sm": ["Inter", "sans-serif"],
-            "body-md": ["Inter", "Noto Serif TC", "sans-serif"],
-            "display-hero-mobile": ["Noto Serif TC", "serif"],
-            "body-sm": ["Inter", "sans-serif"],
-            "headline-sm": ["Noto Serif TC", "serif"],
-            "flavor-tag": ["Noto Serif TC", "serif"],
-            "display-hero": ["Noto Serif TC", "serif"],
-            "headline-md": ["Noto Serif TC", "serif"],
-            "headline-xl": ["Noto Serif TC", "serif"],
-            "headline-lg-mobile": ["Noto Serif TC", "serif"],
-            "headline-xl-mobile": ["Noto Serif TC", "serif"],
-            "headline-lg": ["Noto Serif TC", "serif"],
-            "label-md": ["Inter", "sans-serif"]
-          },
-          "fontSize": {
-            "body-lg": ["18px", {"lineHeight": "32px", "fontWeight": "400"}],
-            "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "500"}],
-            "body-md": ["15px", {"lineHeight": "26px", "fontWeight": "400"}],
-            "display-hero-mobile": ["36px", {"lineHeight": "48px", "letterSpacing": "0.01em", "fontWeight": "400"}],
-            "body-sm": ["13px", {"lineHeight": "22px", "fontWeight": "400"}],
-            "headline-sm": ["20px", {"lineHeight": "30px", "fontWeight": "500"}],
-            "flavor-tag": ["13px", {"lineHeight": "18px", "letterSpacing": "0.03em", "fontWeight": "400"}],
-            "display-hero": ["56px", {"lineHeight": "72px", "letterSpacing": "0.02em", "fontWeight": "400"}],
-            "headline-md": ["24px", {"lineHeight": "34px", "fontWeight": "500"}],
-            "headline-xl": ["40px", {"lineHeight": "52px", "letterSpacing": "0.01em", "fontWeight": "400"}],
-            "headline-lg-mobile": ["24px", {"lineHeight": "34px", "fontWeight": "500"}],
-            "headline-xl-mobile": ["28px", {"lineHeight": "38px", "letterSpacing": "0.01em", "fontWeight": "400"}],
-            "headline-lg": ["32px", {"lineHeight": "44px", "fontWeight": "500"}],
-            "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.04em", "fontWeight": "500"}]
-          }
-        }
-      }
-    }
+<!doctype html>
+<html lang="zh-TW" data-theme="terra">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>一遇｜讓好咖啡，回到乾淨的本質</title>
+  <meta name="description" content="探索衣索比亞、哥倫比亞與瓜地馬拉的精品咖啡風味。以四道挑豆工序與新鮮烘焙，讓花果香、焦糖甜與可可尾韻回到你的日常。"/>
+  <meta name="theme-color" content="#f5eee4"/>
+  <link rel="stylesheet" href="assets/home.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif+TC:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <script>
+    try {
+      const savedTheme=localStorage.getItem('pure-select-theme');
+      if(['terra','forest','cobalt','nocturne'].includes(savedTheme)) document.documentElement.dataset.theme=savedTheme;
+      if(localStorage.getItem('pure-select-motion')==='paused') document.documentElement.dataset.motion='paused';
+    } catch (_) {}
   </script>
-<style>
-    .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-      display: inline-block;
-      vertical-align: middle;
-      line-height: 1;
-    }
-    .material-symbols-outlined[data-weight="fill"] {
-      font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-    }
-  </style>
-<style id="rwd">
-img,video,svg{max-width:100%}
-.ovx{overflow-x:auto;-webkit-overflow-scrolling:touch}
-#mnav{display:none}
-#mnav.open{display:flex}
-@media (max-width:767px){
- h1,h2,h3{overflow-wrap:anywhere}
- header button, header a{min-width:40px;min-height:40px}
- header [aria-label="搜尋"]{display:none}
- #aover ~ div main .flex{flex-wrap:wrap}
- #aover ~ div main table .flex{flex-wrap:nowrap}
- footer a{display:inline-block;padding:6px 0}
- button{min-height:32px}
- input[type=checkbox],input[type=radio]{width:20px;height:20px}
-}
-</style></head>
-<body class="bg-[#F7F1E8] text-[#2C221E] antialiased selection:bg-[#EADFCE] selection:text-[#513419]">
-<!-- TopNavBar (Shared Component JSON Conformance) -->
-<header class="bg-surface-container-lowest/90 dark:bg-inverse-surface/90 backdrop-blur-md docked full-width top-0 sticky z-50 border-b border-outline-variant/30 dark:border-outline/20 shadow-sm dark:shadow-none">
-<div class="max-w-7xl mx-auto px-5 md:px-margin-desktop py-space-md flex items-center justify-between">
-<!-- Brand Logo -->
-<a class="flex flex-col cursor-pointer transition-all duration-200 active:scale-95 group" href="index.html">
-<span class="font-headline-md text-headline-md tracking-wider text-primary dark:text-inverse-primary font-medium">四選淨豆</span>
-<span class="font-label-sm text-label-sm tracking-[0.2em] text-[#8A9A7B] font-medium -mt-1">PURE SELECT COFFEE</span>
-</a>
-<!-- Navigation Links -->
-<nav class="hidden md:flex items-center gap-space-xl">
-<!-- Active Nav: 首頁 -->
-<a class="text-primary dark:text-inverse-primary border-b-2 border-primary dark:border-inverse-primary pb-1 font-medium transition-colors font-label-md text-label-md cursor-pointer" href="index.html">首頁</a>
-<!-- Inactive Nav items -->
-<a class="text-on-surface-variant dark:text-outline-variant pb-1 hover:text-primary dark:hover:text-inverse-primary transition-colors font-label-md text-label-md cursor-pointer" href="story.html">品牌故事</a>
-<a class="text-on-surface-variant dark:text-outline-variant pb-1 hover:text-primary dark:hover:text-inverse-primary transition-colors font-label-md text-label-md cursor-pointer" href="about.html">關於我們</a>
-<a class="text-on-surface-variant dark:text-outline-variant pb-1 hover:text-primary dark:hover:text-inverse-primary transition-colors font-label-md text-label-md cursor-pointer" href="shop.html">商品選購</a>
-</nav>
-<!-- Trailing Action Icons -->
-<div class="flex items-center gap-space-md">
-<!-- Search -->
-<button aria-label="搜尋" class="p-2 text-primary dark:text-inverse-primary hover:text-[#8A9A7B] transition-colors rounded-lg cursor-pointer" data-icon="search">
-<span class="material-symbols-outlined text-[22px]">search</span>
-</button>
-<!-- Account / Person -->
-<button aria-label="會員專區" class="p-2 text-primary dark:text-inverse-primary hover:text-[#8A9A7B] transition-colors rounded-lg cursor-pointer" data-icon="person">
-<span class="material-symbols-outlined text-[22px]">person</span>
-</button>
-<!-- Shopping Bag with Badge Indicator '2' -->
-<a aria-label="購物車" class="p-2 text-primary dark:text-inverse-primary hover:text-[#8A9A7B] transition-colors rounded-lg cursor-pointer relative" data-icon="shopping_bag" href="checkout.html">
-<span class="material-symbols-outlined text-[22px]">shopping_bag</span>
-<span class="absolute top-1 right-1 w-4 h-4 bg-[#8A9A7B] text-white text-[10px] font-label-sm font-semibold rounded-full flex items-center justify-center">2</span>
-</a>
-</div>
-</div>
+  <script src="assets/catalog-data.js" defer></script><script src="assets/store.js" defer></script><script src="assets/commerce.js" defer></script><script src="assets/home.js" defer></script>
+</head>
+<body data-page="home">
+<a class="skip-link" href="#main-content">跳到主要內容</a>
+<header class="site-header">
+  <div class="nav-shell">
+    <a class="brand" href="index.html" aria-label="一遇首頁"><span class="store-brand">一遇</span><small>ENCOUNTER COFFEE</small></a>
+    <nav id="primary-nav" aria-label="主要導覽">
+      <a href="#products">咖啡選購</a><a href="#process">挑豆工藝</a><a href="story.html">品牌故事</a><a href="#guide">品飲指南</a><a href="#faq">常見問題</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-button" type="button" id="search-open" aria-label="搜尋首頁精選咖啡" aria-haspopup="dialog" aria-controls="coffee-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button>
+      <div class="theme-control">
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-expanded="false" aria-controls="theme-options"><span class="current-color" aria-hidden="true"></span><span>配色</span></button>
+        <div id="theme-options" class="theme-options" hidden>
+          <p>選擇首頁配色</p>
+          <div role="group" aria-label="首頁配色">
+            <button type="button" data-theme-choice="terra" aria-pressed="true"><span class="swatch swatch-terra" aria-hidden="true"></span>暖陶日光</button>
+            <button type="button" data-theme-choice="forest" aria-pressed="false"><span class="swatch swatch-forest" aria-hidden="true"></span>森野苔綠</button>
+            <button type="button" data-theme-choice="cobalt" aria-pressed="false"><span class="swatch swatch-cobalt" aria-hidden="true"></span>靛藍檸光</button>
+            <button type="button" data-theme-choice="nocturne" aria-pressed="false"><span class="swatch swatch-nocturne" aria-hidden="true"></span>夜焙琥珀</button>
+          </div>
+        </div>
+      </div>
+      <a class="icon-button bag-link" href="checkout.html" aria-label="前往購物車"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14l1 14H4L5 7Z M8 9V6a4 4 0 0 1 8 0v3"/></svg></a>
+      <button class="icon-button menu-button" type="button" id="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="開啟選單"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
 </header>
-<!-- Hero Section -->
-<section class="relative pt-space-2xl pb-space-3xl overflow-hidden">
-<div class="max-w-7xl mx-auto px-5 md:px-margin-desktop">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-gutter-desktop items-center">
-<!-- Hero Text (5 cols) -->
-<div class="lg:col-span-6 flex flex-col justify-center">
-<div class="inline-flex items-center gap-2 px-3 py-1 bg-[#8A9A7B]/15 text-[#546347] rounded-lg font-label-sm text-label-sm tracking-wider w-fit mb-space-md">
-<span class="w-1.5 h-1.5 rounded-full bg-[#546347]"></span>
-<span>專為深度專注打造的乾淨咖啡</span>
-</div>
-<h1 class="font-headline-xl text-headline-xl text-[#513419] tracking-tight mb-space-md">
-            四次挑豆，<br/>一杯乾淨的專注
-          </h1>
-<p class="font-body-lg text-body-lg text-[#50453d] mb-space-xl max-w-xl">
-            健康產地 × 生活品味。人工手選加上機器複選，共四道挑豆工序，去除瑕疵豆，乾淨順口。每一口都不留雜澀，唯有溫潤清透的甘甜。
-          </p>
-<!-- CTA Action Buttons -->
-<div class="flex flex-wrap items-center gap-space-md mb-space-2xl">
-<a class="inline-flex items-center justify-center gap-2 bg-[#6B4A2E] hover:bg-[#4A321E] text-white px-7 py-3.5 rounded-lg font-label-md text-label-md tracking-wider transition-all duration-200 active:scale-95 shadow-sm" href="#products">
-<span>立即選購</span>
-<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-</a>
-<a class="inline-flex items-center justify-center gap-2 bg-transparent hover:bg-[#6B4A2E]/5 border border-[#6B4A2E] text-[#6B4A2E] px-7 py-3.5 rounded-lg font-label-md text-label-md tracking-wider transition-all duration-200" href="story.html">
-<span>了解四次挑豆</span>
-</a>
-</div>
-<!-- Trust Highlights Row -->
-<div class="pt-space-md border-t border-[#EADFCE] flex flex-wrap items-center gap-y-3 gap-x-6 text-[#50453d] font-label-md text-label-md">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[#8A9A7B] text-[18px]">verified</span>
-<span>100% 精品莊園豆</span>
-</div>
-<span class="text-[#d4c3b9] hidden sm:inline">•</span>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[#8A9A7B] text-[18px]">workspace_premium</span>
-<span>四次挑豆品質把關</span>
-</div>
-<span class="text-[#d4c3b9] hidden sm:inline">•</span>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[#8A9A7B] text-[18px]">local_fire_department</span>
-<span>每週鮮烘出貨</span>
-</div>
-</div>
-</div>
-<!-- Hero Visual (7 cols) -->
-<div class="lg:col-span-6 relative mt-space-xl lg:mt-0">
-<div class="relative rounded-lg overflow-hidden border border-[#EADFCE] bg-[#FDFBF7] p-3 shadow-[0_4px_24px_-2px_rgba(74,50,30,0.05)]">
-<img class="w-full h-[460px] object-cover rounded-lg" data-alt="A clean, minimalist artisanal coffee tableau bathed in soft natural morning sunlight filtering through linen curtains. In the foreground sits an unglazed handmade ceramic pour-over dripper on a clear glass server filled with golden amber, steaming single-origin coffee. Next to the dripper are perfectly sorted whole roasted specialty coffee beans on a tactile cream linen cloth, alongside a calm oak wood workspace with an open minimalist notebook and fountain pen. The warm, understated palette features roasted coffee browns, soft cream, and muted botanical sage tones." loading="eager" src="assets/006e8999088e.jpg"/>
-<!-- Floating Origin Badge -->
-<div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm border border-[#EADFCE] px-5 py-3 rounded-lg shadow-sm flex items-center gap-3">
-<div class="w-8 h-8 rounded-lg bg-[#8A9A7B]/20 text-[#546347] flex items-center justify-center">
-<span class="material-symbols-outlined text-[20px]">filter_vintage</span>
-</div>
-<div>
-<p class="font-label-sm text-label-sm text-[#82756b]">產地純淨批次</p>
-<p class="font-headline-sm text-headline-sm text-[#513419]">高海拔單一小農莊園</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Four-Step Sorting Process Section (核心工序介紹) -->
-<section class="py-space-3xl bg-[#FDFBF7] border-y border-[#EADFCE]" id="process">
-<div class="max-w-7xl mx-auto px-5 md:px-margin-desktop">
-<!-- Section Header -->
-<div class="text-center max-w-2xl mx-auto mb-space-2xl">
-<span class="font-label-sm text-label-sm tracking-[0.2em] text-[#8A9A7B] uppercase block mb-space-xs font-semibold">工藝堅持 · 嚴苛篩選</span>
-<h2 class="font-headline-lg text-headline-lg text-[#513419] tracking-tight mb-space-sm">四道嚴謹挑豆工序，還原咖啡純粹本質</h2>
-<p class="font-body-md text-body-md text-[#50453d]">拒絕瑕疵豆造成的苦澀與雜味，只留甘甜與純淨。層層篩揀，成就一杯安穩心神的透明風味。</p>
-</div>
-<!-- 4-Card Horizontal Process Pipeline -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-gutter-desktop relative">
-<!-- Step 1 -->
-<div class="bg-white border border-[#EADFCE] rounded-lg p-space-lg flex flex-col justify-between hover:-translate-y-1 transition-all duration-300 shadow-[0_4px_20px_-2px_rgba(74,50,30,0.03)] group">
-<div>
-<div class="flex items-center justify-between mb-space-md">
-<span class="w-9 h-9 rounded-lg bg-[#8A9A7B] text-white font-label-md font-semibold flex items-center justify-center">01</span>
-<span class="material-symbols-outlined text-[#8A9A7B] text-[26px]">eco</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-[#513419] mb-space-xs">產地人工初選</h3>
-<p class="font-body-sm text-body-sm text-[#50453d] leading-relaxed">
-              莊園採摘後於產地進行第一道人工手選，嚴格篩除未成熟果實與過度發酵豆，確保生豆基礎健康純淨。
-            </p>
-</div>
-<div class="mt-space-lg pt-space-sm border-t border-[#F7F1E8] flex items-center justify-between text-[#82756b] font-label-sm text-label-sm">
-<span>篩除率 ~ 8%</span>
-<span class="text-[#8A9A7B] font-medium">源頭健康把關</span>
-</div>
-</div>
-<!-- Step 2 -->
-<div class="bg-white border border-[#EADFCE] rounded-lg p-space-lg flex flex-col justify-between hover:-translate-y-1 transition-all duration-300 shadow-[0_4px_20px_-2px_rgba(74,50,30,0.03)] group">
-<div>
-<div class="flex items-center justify-between mb-space-md">
-<span class="w-9 h-9 rounded-lg bg-[#8A9A7B] text-white font-label-md font-semibold flex items-center justify-center">02</span>
-<span class="material-symbols-outlined text-[#8A9A7B] text-[26px]">center_focus_strong</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-[#513419] mb-space-xs">機器光學色選</h3>
-<p class="font-body-sm text-body-sm text-[#50453d] leading-relaxed">
-              導入高精準光學紅外線色選機，依據色澤、光譜反射與密度高頻剔除肉眼難辨的蟲蛀、黑斑與黴變豆。
-            </p>
-</div>
-<div class="mt-space-lg pt-space-sm border-t border-[#F7F1E8] flex items-center justify-between text-[#82756b] font-label-sm text-label-sm">
-<span>精密紅外光學</span>
-<span class="text-[#8A9A7B] font-medium">高速剔除蟲蛀</span>
-</div>
-</div>
-<!-- Step 3 -->
-<div class="bg-white border border-[#EADFCE] rounded-lg p-space-lg flex flex-col justify-between hover:-translate-y-1 transition-all duration-300 shadow-[0_4px_20px_-2px_rgba(74,50,30,0.03)] group">
-<div>
-<div class="flex items-center justify-between mb-space-md">
-<span class="w-9 h-9 rounded-lg bg-[#8A9A7B] text-white font-label-md font-semibold flex items-center justify-center">03</span>
-<span class="material-symbols-outlined text-[#8A9A7B] text-[26px]">pan_tool</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-[#513419] mb-space-xs">人工細緻複選</h3>
-<p class="font-body-sm text-body-sm text-[#50453d] leading-relaxed">
-              資深挑豆師在自然均勻光源下手選覆驗，剔除細微微裂、發育不全或微帶酸感的生豆，工藝細膩至毫釐。
-            </p>
-</div>
-<div class="mt-space-lg pt-space-sm border-t border-[#F7F1E8] flex items-center justify-between text-[#82756b] font-label-sm text-label-sm">
-<span>慢工手感覆驗</span>
-<span class="text-[#8A9A7B] font-medium">杜絕微裂生豆</span>
-</div>
-</div>
-<!-- Step 4 -->
-<div class="bg-white border border-[#EADFCE] rounded-lg p-space-lg flex flex-col justify-between hover:-translate-y-1 transition-all duration-300 shadow-[0_4px_20px_-2px_rgba(74,50,30,0.03)] group">
-<div>
-<div class="flex items-center justify-between mb-space-md">
-<span class="w-9 h-9 rounded-lg bg-[#8A9A7B] text-white font-label-md font-semibold flex items-center justify-center">04</span>
-<span class="material-symbols-outlined text-[#8A9A7B] text-[26px]">local_cafe</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-[#513419] mb-space-xs">烘焙後最終挑豆</h3>
-<p class="font-body-sm text-body-sm text-[#50453d] leading-relaxed">
-              新鮮烘焙出爐冷卻後，進行第四次熟豆嚴格檢視，淘汰貝殼豆、未膨脹豆與烘焙不均豆，保證極致純淨杯測。
-            </p>
-</div>
-<div class="mt-space-lg pt-space-sm border-t border-[#F7F1E8] flex items-center justify-between text-[#82756b] font-label-sm text-label-sm">
-<span>熟豆純淨交付</span>
-<span class="text-[#8A9A7B] font-medium">零雜味保證</span>
-</div>
-</div>
-</div>
-<!-- Trust Philosophy Quote -->
-<div class="mt-space-xl p-space-md bg-[#F7F1E8] rounded-lg border border-[#EADFCE] flex items-center justify-center gap-3 text-center">
-<span class="material-symbols-outlined text-[#6B4A2E] text-[20px]">spa</span>
-<p class="font-body-md text-body-md text-[#513419]">
-          「我們耗費比常規品牌多三倍的時間挑豆，只為讓你的早晨每一滴萃取，都只有安定的咖啡芳香與甘潤。」
-        </p>
-</div>
-</div>
-</section>
-<!-- Featured Specialty Coffee Beans (精選豆品系列) -->
-<section class="py-space-3xl" id="products">
-<div class="max-w-7xl mx-auto px-5 md:px-margin-desktop">
-<!-- Section Header -->
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-2xl gap-4">
-<div>
-<span class="font-label-sm text-label-sm tracking-[0.2em] text-[#8A9A7B] uppercase block mb-space-xs font-semibold">本月焙煎推薦</span>
-<h2 class="font-headline-lg text-headline-lg text-[#513419] tracking-tight">探索三款純淨手沖風味</h2>
-</div>
-<a class="inline-flex items-center gap-1.5 text-[#6B4A2E] hover:text-[#4A321E] font-label-md text-label-md group" href="#">
-<span>查看全部淨豆系列</span>
-<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</a>
-</div>
-<!-- 3 Curated Product Cards Grid -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-gutter-desktop">
-<!-- Bean 1: Ethiopia Yirgacheffe -->
-<div class="bg-[#FDFBF7] border border-[#EADFCE] rounded-lg overflow-hidden flex flex-col justify-between hover:-translate-y-1 hover:shadow-[0_8px_24px_-4px_rgba(107,74,46,0.06)] transition-all duration-300">
-<div>
-<!-- Image Frame -->
-<div class="relative overflow-hidden bg-[#fff8f6]">
-<a href="product.html"><img class="w-full h-60 object-cover hover:scale-105 transition-transform duration-500" data-alt="Premium specialty coffee whole roasted light-brown beans from Ethiopia Yirgacheffe laid out cleanly on natural cream linen alongside a handmade white ceramic tasting vessel. Warm natural sunlight highlights the uniform size and immaculate shape of each single-origin bean, showing zero defects. Minimalist Scandinavian and Japanese aesthetic styling with earthy coffee tones and delicate sage accents." loading="lazy" src="assets/45757328e57f.jpg"/></a>
-<div class="absolute top-3 left-3 flex gap-2">
-<span class="px-2.5 py-1 rounded-lg bg-[#8A9A7B] text-white font-label-sm text-label-sm">淺焙 Light Roast</span>
-<span class="px-2.5 py-1 rounded-lg bg-[#FDFBF7]/90 backdrop-blur-sm border border-[#EADFCE] text-[#50453d] font-label-sm text-label-sm">日曬 Natural</span>
-</div>
-</div>
-<!-- Product Details -->
-<div class="p-space-lg">
-<div class="flex items-center justify-between mb-1">
-<span class="font-label-sm text-label-sm text-[#82756b]">產區：衣索比亞 耶加雪菲</span>
-<span class="font-label-sm text-label-sm text-[#8A9A7B] font-medium">四選合格</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-[#513419] mb-space-sm"><a class="hover:underline" href="product.html">衣索比亞 耶加雪菲 歌姬</a></h3>
-<!-- Flavor Notes Pills -->
-<div class="flex flex-wrap gap-1.5 mb-space-md">
-<span class="px-2.5 py-0.5 rounded-lg bg-[#F7F1E8] text-[#50453d] font-flavor-tag text-flavor-tag">佛手柑</span>
-<span class="px-2.5 py-0.5 rounded-lg bg-[#F7F1E8] text-[#50453d] font-flavor-tag text-flavor-tag">白桃</span>
-<span class="px-2.5 py-0.5 rounded-lg bg-[#F7F1E8] text-[#50453d] font-flavor-tag text-flavor-tag">茉莉花香</span>
-<span class="px-2.5 py-0.5 rounded-lg bg-[#F7F1E8] text-[#50453d] font-flavor-tag text-flavor-tag">純淨柑橘酸</span>
-</div>
-<p class="font-body-sm text-body-sm text-[#82756b] mb-space-md">
-                高海拔日曬發酵工藝，花果香氣如微風清亮，四次嚴選手選去除苦澀雜感，酸質透澈輕盈。
-              </p>
-</div>
-</div>
-<!-- Price & Action Footer -->
-<div class="px-space-lg pb-space-lg pt-space-xs border-t border-[#F7F1E8] flex items-center justify-between">
-<div>
-<span class="text-xs text-[#82756b]">規格：227g (半磅)</span>
-<p class="font-headline-sm text-headline-sm text-[#513419] font-semibold">NT$ 480</p>
-</div>
-<button aria-label="加入購物車" class="inline-flex items-center gap-1.5 bg-[#6B4A2E] hover:bg-[#4A321E] text-white px-4 py-2.5 rounded-lg font-label-md text-label-md transition-colors cursor-pointer active:scale-95">
-<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
-<span>加入購物車</span>
-</button>
-</div>
-</div>
-<!-- Bean 2: Colombia Huila -->
-<div class="bg-[#FDFBF7] border border-[#EADFCE] rounded-lg overflow-hidden flex flex-col justify-between hover:-translate-y-1 hover:shadow-[0_8px_24px_-4px_rgba(107,74,46,0.06)] transition-all duration-300">
-<div>
-<!-- Image Frame -->
-<div class="relative overflow-hidden bg-[#fff8f6]">
-<a href="product.html"><img class="w-full h-60 object-cover hover:scale-105 transition-transform duration-500" data-alt="Freshly roasted Colombian Huila specialty coffee beans resting on an organic warm cream ceramic saucer. A wooden pour-over dripper stand and natural paper filter are soft-blurred in the ambient background. Bright, peaceful morning light casts gentle warm shadows across the immaculate roasted coffee beans, highlighting artisanal purity, clean lines, and earth tones." loading="lazy" src="assets/b57b40299e6b.jpg"/></a>
-<div class="absolute top-3 left-3 flex gap-2">
-<span class="px-2.5 py-1 rounded-lg bg-[#C18C5D] text-white font-label-sm text-label-sm">中淺焙 Medium-Light</span>
-<span class="px-2.5 py-1 rounded-lg bg-[#FDFBF7]/90 backdrop-blur-sm border border-[#EADFCE] text-[#50453d] font-label-sm text-label-sm">水洗 Washed</span>
-</div>
-</div>
-<!-- Product Details -->
-<div class="p-space-lg">
-<div class="flex items-center justify-between mb-1">
-<span class="font-label-sm text-label-sm text-[#82756b]">產區：哥倫比亞 薇拉</span>
-<span class="font-label-sm text-label-sm text-[#8A9A7B] font-medium">四選合格</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-[#513419] mb-space-sm"><a class="hover:underline" href="product.html">哥倫比亞 薇拉 聖安道莊園</a></h3>
-<!-- Flavor Notes Pills -->
-<div class="flex flex-wrap gap-1.5 mb-space-md">
-<span class="px-2.5 py-0.5 rounded-lg bg-[#F7F1E8] text-[#50453d] font-flavor-tag text-flavor-tag">紅蘋果</span>
-<span class="px-2.5 py-0.5 rounded-lg bg-[#F7F1E8] text-[#50453d] font-flavor-tag text-flavor-tag">楓糖</span>
-<span class="px-2.5 py-0.5 rounded-lg bg-[#F7F1E8] text-[#50453d] font-flavor-tag text-flavor-tag">杏仁堅果</span>
-<span class="px-2.5 py-0.5 rounded-lg bg-[#F7F1E8] text-[#50453d] font-flavor-tag text-flavor-tag">乾淨焦糖甜</span>
-</div>
-<p class="font-body-sm text-body-sm text-[#82756b] mb-space-md">
-                純淨山泉水洗發酵，蘋果與楓糖交織溫和甜潤感，剔除黑豆與破裂豆後，餘韻悠長絲滑。
-              </p>
-</div>
-</div>
-<!-- Price & Action Footer -->
-<div class="px-space-lg pb-space-lg pt-space-xs border-t border-[#F7F1E8] flex items-center justify-between">
-<div>
-<span class="text-xs text-[#82756b]">規格：227g (半磅)</span>
-<p class="font-headline-sm text-headline-sm text-[#513419] font-semibold">NT$ 450</p>
-</div>
-<button aria-label="加入購物車" class="inline-flex items-center gap-1.5 bg-[#6B4A2E] hover:bg-[#4A321E] text-white px-4 py-2.5 rounded-lg font-label-md text-label-md transition-colors cursor-pointer active:scale-95">
-<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
-<span>加入購物車</span>
-</button>
-</div>
-</div>
-<!-- Bean 3: Guatemala Antigua -->
-<div class="bg-[#FDFBF7] border border-[#EADFCE] rounded-lg overflow-hidden flex flex-col justify-between hover:-translate-y-1 hover:shadow-[0_8px_24px_-4px_rgba(107,74,46,0.06)] transition-all duration-300">
-<div>
-<!-- Image Frame -->
-<div class="relative overflow-hidden bg-[#fff8f6]">
-<a href="product.html"><img class="w-full h-60 object-cover hover:scale-105 transition-transform duration-500" data-alt="Rich, medium roasted specialty coffee beans from Guatemala Antigua displayed on an artisanal stoneware plate with soft warm linen background. A stream of freshly brewed dark amber coffee pours quietly from an olive wood kettle into a warm ceramic mug. Peaceful, warm, and inviting ambiance under soft natural window light, with earthy tones of deep espresso brown, warm linen cream, and subtle sage." loading="lazy" src="assets/77aa1b42b7dc.jpg"/></a>
-<div class="absolute top-3 left-3 flex gap-2">
-<span class="px-2.5 py-1 rounded-lg bg-[#96613d] text-white font-label-sm text-label-sm">中焙 Medium Roast</span>
-<span class="px-2.5 py-1 rounded-lg bg-[#FDFBF7]/90 backdrop-blur-sm border border-[#EADFCE] text-[#50453d] font-label-sm text-label-sm">水洗 Washed</span>
-</div>
-</div>
-<!-- Product Details -->
-<div class="p-space-lg">
-<div class="flex items-center justify-between mb-1">
-<span class="font-label-sm text-label-sm text-[#82756b]">產區：瓜地馬拉 安堤瓜</span>
-<span class="font-label-sm text-label-sm text-[#8A9A7B] font-medium">四選合格</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-[#513419] mb-space-sm"><a class="hover:underline" href="product.html">瓜地馬拉 安堤瓜 花神</a></h3>
-<!-- Flavor Notes Pills -->
-<div class="flex flex-wrap gap-1.5 mb-space-md">
-<span class="px-2.5 py-0.5 rounded-lg bg-[#F7F1E8] text-[#50453d] font-flavor-tag text-flavor-tag">烤榛果</span>
-<span class="px-2.5 py-0.5 rounded-lg bg-[#F7F1E8] text-[#50453d] font-flavor-tag text-flavor-tag">黑巧克力</span>
-<span class="px-2.5 py-0.5 rounded-lg bg-[#F7F1E8] text-[#50453d] font-flavor-tag text-flavor-tag">奶油圓潤</span>
-<span class="px-2.5 py-0.5 rounded-lg bg-[#F7F1E8] text-[#50453d] font-flavor-tag text-flavor-tag">甜感持久</span>
-</div>
-<p class="font-body-sm text-body-sm text-[#82756b] mb-space-md">
-                火山土壤豐富礦物質滋潤，堅果與純黑可可圓潤飽滿。經四道嚴選，消除常見焦苦燻感，溫潤深邃。
-              </p>
-</div>
-</div>
-<!-- Price & Action Footer -->
-<div class="px-space-lg pb-space-lg pt-space-xs border-t border-[#F7F1E8] flex items-center justify-between">
-<div>
-<span class="text-xs text-[#82756b]">規格：227g (半磅)</span>
-<p class="font-headline-sm text-headline-sm text-[#513419] font-semibold">NT$ 420</p>
-</div>
-<button aria-label="加入購物車" class="inline-flex items-center gap-1.5 bg-[#6B4A2E] hover:bg-[#4A321E] text-white px-4 py-2.5 rounded-lg font-label-md text-label-md transition-colors cursor-pointer active:scale-95">
-<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
-<span>加入購物車</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Brand Values & Philosophy Section (品牌核心價值) -->
-<section class="py-space-3xl bg-[#FDFBF7] border-y border-[#EADFCE]" id="about">
-<div class="max-w-7xl mx-auto px-5 md:px-margin-desktop">
-<div class="text-center max-w-xl mx-auto mb-space-2xl">
-<span class="font-label-sm text-label-sm tracking-[0.2em] text-[#8A9A7B] uppercase block mb-space-xs font-semibold">品牌核心理念</span>
-<h2 class="font-headline-lg text-headline-lg text-[#513419] tracking-tight">為什麼專注於「乾淨」？</h2>
-<p class="font-body-md text-body-md text-[#50453d] mt-2">咖啡不只是提神飲品，更是陪伴日常思考的清澄澄儀式。</p>
-</div>
-<!-- 3-Column Editorial Grid -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-gutter-desktop">
-<!-- Pillar 1 -->
-<div class="bg-white border border-[#EADFCE] rounded-lg p-space-xl flex flex-col items-start shadow-sm">
-<div class="w-12 h-12 rounded-lg bg-[#8A9A7B]/15 text-[#546347] flex items-center justify-center mb-space-md">
-<span class="material-symbols-outlined text-[28px]">yard</span>
-</div>
-<span class="font-label-sm text-label-sm text-[#8A9A7B] font-semibold tracking-wider mb-1">01 / 源頭守護</span>
-<h3 class="font-headline-md text-headline-md text-[#513419] mb-space-sm">健康產地溯源</h3>
-<p class="font-body-md text-body-md text-[#50453d] leading-relaxed">
-            嚴格溯源高海拔單一莊園，全程符合生豆衛生標準，無農藥殘留。尊重土地自然輪作，從源頭確保每一粒生豆對大自然與人體皆溫柔無害。
-          </p>
-</div>
-<!-- Pillar 2 -->
-<div class="bg-white border border-[#EADFCE] rounded-lg p-space-xl flex flex-col items-start shadow-sm">
-<div class="w-12 h-12 rounded-lg bg-[#8A9A7B]/15 text-[#546347] flex items-center justify-center mb-space-md">
-<span class="material-symbols-outlined text-[28px]">self_improvement</span>
-</div>
-<span class="font-label-sm text-label-sm text-[#8A9A7B] font-semibold tracking-wider mb-1">02 / 純淨能量</span>
-<h3 class="font-headline-md text-headline-md text-[#513419] mb-space-sm">乾淨咖啡因，專注工作</h3>
-<p class="font-body-md text-body-md text-[#50453d] leading-relaxed">
-            剔除致苦、致澀的瑕疵雜質，帶來乾淨順口的風味，為清晨深思與專業創作注入源源不絕的乾淨專注。
-          </p>
-</div>
-<!-- Pillar 3 -->
-<div class="bg-white border border-[#EADFCE] rounded-lg p-space-xl flex flex-col items-start shadow-sm">
-<div class="w-12 h-12 rounded-lg bg-[#8A9A7B]/15 text-[#546347] flex items-center justify-center mb-space-md">
-<span class="material-symbols-outlined text-[28px]">coffee</span>
-</div>
-<span class="font-label-sm text-label-sm text-[#8A9A7B] font-semibold tracking-wider mb-1">03 / 日常儀式</span>
-<h3 class="font-headline-md text-headline-md text-[#513419] mb-space-sm">簡約生活品味</h3>
-<p class="font-body-md text-body-md text-[#50453d] leading-relaxed">
-            每一壺手沖，都是放慢步調、與自己對話的清晨時刻。不盲目追求浮誇濃烈，以純粹通透的澄澈口感，回歸恬淡、從容的北歐與日式生活美學。
-          </p>
-</div>
-</div>
-</div>
-</section>
-<!-- Customer Testimonials (專注日常・真實品飲心得) -->
-<section class="py-space-3xl">
-<div class="max-w-7xl mx-auto px-5 md:px-margin-desktop">
-<div class="text-center max-w-xl mx-auto mb-space-2xl">
-<span class="font-label-sm text-label-sm tracking-[0.2em] text-[#8A9A7B] uppercase block mb-space-xs font-semibold">顧客反饋</span>
-<h2 class="font-headline-lg text-headline-lg text-[#513419] tracking-tight">專注日常・真實品飲心得</h2>
-<p class="font-body-md text-body-md text-[#50453d] mt-2">來自設計師、工程師與生活美學者的真實生活陪伴筆記。</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-gutter-desktop">
-<!-- Review 1 -->
-<div class="bg-[#FDFBF7] border border-[#EADFCE] rounded-lg p-space-lg flex flex-col justify-between shadow-sm">
-<div>
-<!-- Star Ratings -->
-<div class="flex items-center gap-1 text-[#8A9A7B] mb-space-sm" data-icon="star">
-<span class="material-symbols-outlined text-[18px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[18px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[18px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[18px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[18px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
-</div>
-<p class="font-body-md text-body-md text-[#50453d] italic leading-relaxed mb-space-lg">
-              「平常工作需要長時間的高強度專注，喝了四選淨豆的耶加雪菲，口感非常清亮乾淨，完全沒有負擔感。杯底冷卻後依然清甜無雜味。」
-            </p>
-</div>
-<div class="pt-space-sm border-t border-[#EADFCE] flex items-center justify-between">
-<div>
-<p class="font-label-md text-label-md text-[#513419] font-medium">林育安 Evan Lin</p>
-<p class="font-label-sm text-label-sm text-[#82756b]">獨立介面設計師</p>
-</div>
-<span class="text-xs px-2.5 py-1 bg-[#8A9A7B]/10 text-[#546347] rounded-lg font-label-sm">回購第 5 次</span>
-</div>
-</div>
-<!-- Review 2 -->
-<div class="bg-[#FDFBF7] border border-[#EADFCE] rounded-lg p-space-lg flex flex-col justify-between shadow-sm">
-<div>
-<!-- Star Ratings -->
-<div class="flex items-center gap-1 text-[#8A9A7B] mb-space-sm">
-<span class="material-symbols-outlined text-[18px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[18px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[18px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[18px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[18px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
-</div>
-<p class="font-body-md text-body-md text-[#50453d] italic leading-relaxed mb-space-lg">
-              「從生豆到熟豆四次把關真的喝得出來，手沖時粉層膨脹非常均勻，香氣純淨無雜味。早晨寫 code 前來一杯，已經變成我的日常儀式感必備。」
-            </p>
-</div>
-<div class="pt-space-sm border-t border-[#EADFCE] flex items-center justify-between">
-<div>
-<p class="font-label-md text-label-md text-[#513419] font-medium">陳柏翰 Sean Chen</p>
-<p class="font-label-sm text-label-sm text-[#82756b]">資深軟體工程師</p>
-</div>
-<span class="text-xs px-2.5 py-1 bg-[#8A9A7B]/10 text-[#546347] rounded-lg font-label-sm">訂閱會員</span>
-</div>
-</div>
-<!-- Review 3 -->
-<div class="bg-[#FDFBF7] border border-[#EADFCE] rounded-lg p-space-lg flex flex-col justify-between shadow-sm">
-<div>
-<!-- Star Ratings -->
-<div class="flex items-center gap-1 text-[#8A9A7B] mb-space-sm">
-<span class="material-symbols-outlined text-[18px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[18px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[18px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[18px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[18px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
-</div>
-<p class="font-body-md text-body-md text-[#50453d] italic leading-relaxed mb-space-lg">
-              「包裝簡約優雅，拆開豆袋時豆子均勻飽滿，幾乎看不到任何碎豆或畸形豆，顆顆完美。薇拉聖安道的焦糖甜感非常舒服，品質令人驚艷。」
-            </p>
-</div>
-<div class="pt-space-sm border-t border-[#EADFCE] flex items-center justify-between">
-<div>
-<p class="font-label-md text-label-md text-[#513419] font-medium">黃怡萱 Claire Huang</p>
-<p class="font-label-sm text-label-sm text-[#82756b]">生活選物店店主 &amp; 咖啡愛好者</p>
-</div>
-<span class="text-xs px-2.5 py-1 bg-[#8A9A7B]/10 text-[#546347] rounded-lg font-label-sm">回購第 3 次</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Newsletter / Member Privilege (訂閱靜享最新批次) -->
-<section class="pb-space-3xl">
-<div class="max-w-7xl mx-auto px-5 md:px-margin-desktop">
-<div class="bg-white border border-[#8A9A7B]/40 rounded-lg p-space-xl md:p-space-2xl text-center shadow-[0_4px_24px_-4px_rgba(107,74,46,0.05)] relative overflow-hidden">
-<div class="max-w-2xl mx-auto relative z-10">
-<span class="w-10 h-10 rounded-lg bg-[#8A9A7B]/15 text-[#546347] inline-flex items-center justify-center mb-space-sm">
-<span class="material-symbols-outlined text-[24px]">mark_email_read</span>
-</span>
-<h2 class="font-headline-lg text-headline-lg text-[#513419] mb-space-xs">訂閱靜享最新批次</h2>
-<p class="font-body-md text-body-md text-[#50453d] mb-space-lg">
-            加入純淨生活會員，獲取首購 NT$100 禮金與限量莊園新豆通知。<br class="hidden sm:inline"/>我們每週發送一次當季烘豆筆記，絕無干擾訊息。
-          </p>
-<form class="flex flex-col sm:flex-row items-center gap-space-sm max-w-md mx-auto" onsubmit="event.preventDefault(); alert('感謝您的訂閱！首購禮金已送出。');">
-<input class="w-full bg-[#FFFFFF] border border-[#EADFCE] rounded-lg px-4 py-3 text-[#2C221E] placeholder:text-[#A3988E] focus:outline-none focus:border-[#8A9A7B] focus:ring-2 focus:ring-[#8A9A7B]/20 text-sm" placeholder="請輸入您的電子信箱" required="" type="email"/>
-<button class="w-full sm:w-auto shrink-0 bg-[#6B4A2E] hover:bg-[#4A321E] text-white px-7 py-3 rounded-lg font-label-md text-label-md tracking-wider transition-all duration-200 cursor-pointer active:scale-95 shadow-sm" type="submit">
-              立即訂閱
-            </button>
-</form>
-<p class="text-xs text-[#82756b] mt-space-sm">承諾尊重隱私，您可以隨時一鍵取消訂閱。</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Footer (Shared Component JSON Conformance) -->
-<footer class="bg-surface-container dark:bg-surface-container-high docked full-width bottom border-t border-outline-variant/40 dark:border-outline/20">
-<div class="max-w-7xl mx-auto px-5 md:px-margin-desktop py-space-3xl flex flex-col gap-space-2xl">
-<!-- Footer Columns Layout -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-gutter-desktop">
-<!-- Brand Info -->
-<div class="lg:col-span-2">
-<div class="flex flex-col mb-space-sm">
-<span class="font-headline-md text-headline-md text-primary dark:text-inverse-primary font-medium">四選淨豆</span>
-<span class="font-label-sm text-label-sm tracking-[0.2em] text-[#8A9A7B] font-medium -mt-1">PURE SELECT COFFEE</span>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant max-w-sm mb-space-md leading-relaxed">
-            以四道嚴苛工序，回歸咖啡最純粹的甘甜與澄澈。為了每個需要深沉專注的日常，烘焙一杯沒有雜味的純淨咖啡。
-          </p>
-<div class="flex items-center gap-3 text-primary dark:text-inverse-primary">
-<a aria-label="Instagram" class="w-8 h-8 rounded-lg bg-[#EADFCE]/50 hover:bg-[#8A9A7B] hover:text-white flex items-center justify-center transition-colors cursor-pointer" href="#">
-<span class="material-symbols-outlined text-[18px]">photo_camera</span>
-</a>
-<a aria-label="Facebook" class="w-8 h-8 rounded-lg bg-[#EADFCE]/50 hover:bg-[#8A9A7B] hover:text-white flex items-center justify-center transition-colors cursor-pointer" href="#">
-<span class="material-symbols-outlined text-[18px]">public</span>
-</a>
-<a aria-label="LINE" class="w-8 h-8 rounded-lg bg-[#EADFCE]/50 hover:bg-[#8A9A7B] hover:text-white flex items-center justify-center transition-colors cursor-pointer" href="#">
-<span class="material-symbols-outlined text-[18px]">chat</span>
-</a>
-</div>
-</div>
-<!-- Links Column 1: 工藝與理念 (Exact strings from JSON) -->
-<div>
-<h4 class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary mb-space-md">品牌故事</h4>
-<ul class="flex flex-col gap-2">
-<li>
-<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors font-body-sm text-body-sm cursor-pointer" href="#">品牌故事與理念</a>
-</li>
-<li>
-<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors font-body-sm text-body-sm cursor-pointer" href="story.html">四次挑豆工序說明</a>
-</li>
-<li>
-<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors font-body-sm text-body-sm cursor-pointer" href="shop.html">嚴選精品豆系列</a>
-</li>
-</ul>
-</div>
-<!-- Links Column 2: 客戶服務 (Exact strings from JSON) -->
-<div>
-<h4 class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary mb-space-md">顧客支援</h4>
-<ul class="flex flex-col gap-2">
-<li>
-<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors font-body-sm text-body-sm cursor-pointer" href="#">購買常見問題 (FAQ)</a>
-</li>
-<li>
-<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors font-body-sm text-body-sm cursor-pointer" href="#">會員與訂單查詢</a>
-</li>
-<li>
-<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors font-body-sm text-body-sm cursor-pointer" href="#">配送與退換貨政策</a>
-</li>
-<li>
-<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors font-body-sm text-body-sm cursor-pointer" href="#">隱私權與服務條款</a>
-</li>
-</ul>
-</div>
-<!-- Links Column 3: 焙煎工坊資訊 -->
-<div>
-<h4 class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary mb-space-md">工作室專線</h4>
-<ul class="flex flex-col gap-2 text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm">
-<li class="flex items-center gap-1.5">
-<span class="material-symbols-outlined text-[16px] text-[#8A9A7B]">location_on</span>
-<span>台北市大安區青田街 12 號</span>
-</li>
-<li class="flex items-center gap-1.5">
-<span class="material-symbols-outlined text-[16px] text-[#8A9A7B]">mail</span>
-<span>contact@pureselectcoffee.tw</span>
-</li>
-<li class="flex items-center gap-1.5">
-<span class="material-symbols-outlined text-[16px] text-[#8A9A7B]">schedule</span>
-<span>週一至週五 10:00 - 18:00</span>
-</li>
-</ul>
-</div>
-</div>
-<!-- Copyright Bottom Bar (Exact string from JSON) -->
-<div class="pt-space-md border-t border-outline-variant/30 flex flex-col md:flex-row items-center justify-between text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm gap-2">
-<p>© 2024 四選淨豆 Pure Select Coffee Co. 版權所有。專注純淨，源自嚴苛挑選。</p>
-<div class="flex items-center gap-6">
-<span class="text-xs text-[#82756b]">手工挑選 · 鮮烘直達</span>
-<span class="text-xs text-[#82756b]">台灣製造精品熟豆</span>
-</div>
-</div>
-</div>
-</footer>
-
-<script>(function(){var h=document.querySelector('header');if(!h)return;var nav=h.querySelector('nav');if(!nav)return;
-var row=nav.parentElement;var b=document.createElement('button');b.id='mbtn';b.className='md:hidden p-2 text-primary rounded-lg';b.setAttribute('aria-label','選單');b.setAttribute('aria-expanded','false');
-b.innerHTML='<span class="material-symbols-outlined text-[26px]">menu</span>';row.insertBefore(b,row.firstChild);
-var m=document.createElement('nav');m.id='mnav';m.className='md:hidden flex-col px-5 pb-4 gap-1 border-t border-outline-variant/30 bg-surface-container-lowest';
-nav.querySelectorAll('a').forEach(function(a){var c=document.createElement('a');c.href=a.getAttribute('href');c.textContent=a.textContent.trim();c.className='py-3 text-label-md font-label-md text-on-surface border-b border-outline-variant/20';m.appendChild(c)});
-h.appendChild(m);b.onclick=function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o);b.firstChild.textContent=o?'close':'menu'};})();</script></body></html>
+<main id="main-content">
+  <section class="coffee-hero" aria-labelledby="hero-title">
+    <div class="hero-background hero-carousel" aria-hidden="true"><img class="hero-slide is-active" src="assets/coffee-roast-hero.jpg" width="1672" height="941" alt="" fetchpriority="high" decoding="async"/><img class="hero-slide" src="assets/catalog/hero-roastery.jpg" width="1672" height="941" alt="" decoding="async"/><img class="hero-slide" src="assets/catalog/hero-brewing.jpg" width="1672" height="941" alt="" decoding="async"/></div>
+    <div class="carousel-controls" role="group" aria-label="首頁照片輪播"><button type="button" id="slide-prev" aria-label="上一張首頁照片">←</button><button type="button" data-slide="0" aria-label="第1張：烘焙咖啡豆" aria-pressed="true"></button><button type="button" data-slide="1" aria-label="第2張：烘焙工坊" aria-pressed="false"></button><button type="button" data-slide="2" aria-label="第3張：晨間手沖" aria-pressed="false"></button><button type="button" id="slide-next" aria-label="下一張首頁照片">→</button><span id="slide-count">01 / 03</span></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">ENCOUNTER COFFEE</p>
+      <h1 id="hero-title">讓好咖啡，<br/>回到乾淨的本質。</h1>
+      <div class="hero-rule" aria-hidden="true"></div>
+      <p class="hero-description">花果的清香，焦糖的甘甜，餘韻裡的溫柔。<br/>把每一顆豆挑好，讓每一杯，都成為你喜歡的日常。</p>
+      <div class="hero-actions"><a class="hero-buy" href="#products">尋找你的咖啡 <span aria-hidden="true">→</span></a><a class="hero-story" href="#process">我們如何把豆挑好 <span aria-hidden="true">→</span></a></div>
+    </div>
+    <div class="hero-bottom"><span class="hero-roast-note">四次嚴選 <span aria-hidden="true">/</span> 每週鮮烘</span><a href="#collection-intro" class="scroll-cue"><span>SCROLL TO DISCOVER</span><span class="scroll-line" aria-hidden="true"></span></a><button id="motion-toggle" type="button" aria-pressed="false"><span aria-hidden="true">Ⅱ</span> <span id="motion-label">暫停動畫</span></button></div>
+  </section>
+  <div class="brand-notes wrapper" aria-label="品牌堅持"><p><span>01 / ORIGIN</span>單一產區，保留風土</p><p><span>02 / SELECTION</span>人工手選 × 光學複選</p><p><span>03 / ROASTING</span>每週鮮烘，陪伴日常</p></div>
+  <section id="collection-intro" class="brand-intro wrapper">
+    <p class="section-kicker">A GOOD CUP STARTS WITH A GOOD BEAN</p>
+    <h2>好喝，從把豆子挑好開始。</h2>
+    <p class="intro-copy">我們喜歡咖啡裡細緻的香氣，也在意最後一口的乾淨。<br/>從產地、挑選到烘焙，讓風味有自己的樣子，讓日常多一點從容。</p>
+    <a class="text-link" href="story.html">認識一遇 <span aria-hidden="true">↗</span></a>
+  </section>
+  <section class="collection wrapper section-space" id="products" aria-labelledby="collection-title">
+    <div class="section-heading"><div><p class="section-kicker">OUR COFFEE COLLECTION</p><h2 id="collection-title">找到你的那一杯。</h2></div><a class="text-link" href="shop.html">探索全部咖啡 <span aria-hidden="true">↗</span></a></div>
+    <div class="collection-controls"><div class="flavor-filters" role="group" aria-label="依風味篩選精選咖啡"><button type="button" data-flavor="all" aria-pressed="true">全部風味</button><button type="button" data-flavor="floral" aria-pressed="false">花果清香</button><button type="button" data-flavor="sweet" aria-pressed="false">溫潤甜感</button><button type="button" data-flavor="cocoa" aria-pressed="false">堅果可可</button></div><p class="collection-count" id="collection-count" role="status" aria-live="polite">3 款精選咖啡</p></div>
+    <div class="coffee-grid"><article class="coffee-card" data-flavor-card="floral" data-search="衣索比亞・耶加雪菲 水洗 衣索比亞 檸檬 柑橘 蜂蜜 白花"><a class="product-photo" href="product.html?id=yirgacheffe"><img src="assets/45757328e57f.jpg" alt="衣索比亞・耶加雪菲 水洗烘焙豆示意" width="512" height="279" loading="lazy"><span class="roast-label">淺焙 / 水洗</span></a><div class="product-copy"><p class="product-origin">衣索比亞 / 耶加雪菲</p><h3>衣索比亞・耶加雪菲 水洗</h3><p class="flavor-line">檸檬 / 柑橘 / 蜂蜜 / 白花</p><p class="product-description">清楚的柑橘香氣伴隨白花感，蜂蜜般的甜味延伸到尾段。</p><div class="product-bottom"><p><strong>NT$ 480</strong><span>250g / 包 · 展示價</span></p><a class="product-link" href="product.html?id=yirgacheffe">查看咖啡 ↗</a></div></div></article><article class="coffee-card" data-flavor-card="sweet" data-search="哥倫比亞・薇拉 水洗 哥倫比亞 杏仁 胡桃 桃子"><a class="product-photo" href="product.html?id=colombia-huila"><img src="assets/b57b40299e6b.jpg" alt="哥倫比亞・薇拉 水洗烘焙豆示意" width="512" height="279" loading="lazy"><span class="roast-label">中焙 / 水洗</span></a><div class="product-copy"><p class="product-origin">哥倫比亞 / 薇拉 Huila</p><h3>哥倫比亞・薇拉 水洗</h3><p class="flavor-line">杏仁 / 胡桃 / 桃子</p><p class="product-description">柔和的杏仁與胡桃香氣，接續桃子的清新果味，口感滑順。</p><div class="product-bottom"><p><strong>NT$ 450</strong><span>250g / 包 · 展示價</span></p><a class="product-link" href="product.html?id=colombia-huila">查看咖啡 ↗</a></div></div></article><article class="coffee-card" data-flavor-card="cocoa" data-search="瓜地馬拉・安提瓜 水洗 瓜地馬拉 牛奶巧克力 紅糖 堅果"><a class="product-photo" href="product.html?id=guatemala-antigua"><img src="assets/77aa1b42b7dc.jpg" alt="瓜地馬拉・安提瓜 水洗烘焙豆示意" width="512" height="279" loading="lazy"><span class="roast-label">中焙 / 水洗</span></a><div class="product-copy"><p class="product-origin">瓜地馬拉 / 安提瓜</p><h3>瓜地馬拉・安提瓜 水洗</h3><p class="flavor-line">牛奶巧克力 / 紅糖 / 堅果</p><p class="product-description">牛奶巧克力和紅糖的溫暖甜感，堅果香氣帶來圓潤口感。</p><div class="product-bottom"><p><strong>NT$ 420</strong><span>250g / 包 · 展示價</span></p><a class="product-link" href="product.html?id=guatemala-antigua">查看咖啡 ↗</a></div></div></article></div>
+    <div id="coffee-empty" class="coffee-empty" hidden><p>這次沒有找到符合的精選咖啡。</p><button type="button" id="clear-search" class="text-link">查看全部精選</button><a class="text-link" href="shop.html">前往完整選購頁 ↗</a></div>
+  </section>
+  <section class="roastery-story" aria-labelledby="roastery-title">
+    <div class="roastery-photo"><img src="assets/aec8aec76219.jpg" alt="暖光下的咖啡烘焙機與冷卻盤" width="512" height="279" loading="lazy"/></div>
+    <div class="roastery-copy"><p class="section-kicker">FROM BEAN TO YOUR DAILY RITUAL</p><h2 id="roastery-title">香氣有來處，<br/>好咖啡有堅持。</h2><p>挑豆，留下純淨的基底。烘焙，讓每個產區的香氣慢慢展開。我們在意的，是入口時的清透，也是放下杯子後仍想念的甘甜。</p><a class="text-link" href="about.html">走近我們的咖啡日常 <span aria-hidden="true">↗</span></a><div class="story-footnote"><span>精選產區</span><span>細緻挑豆</span><span>每週鮮烘</span></div></div>
+  </section>
+  <section class="process-section wrapper section-space" id="process" aria-labelledby="process-title">
+    <div class="section-heading"><div><p class="section-kicker">THE CARE BEHIND A CLEAN CUP</p><h2 id="process-title">每一顆用心，<br/>都在這一杯裡。</h2></div><p class="section-description">四次挑豆，是乾淨風味的起點。<br/>從產地初選到烘焙後檢視，把細節留給我們，把好喝留給你。</p></div>
+    <div class="process-layout">
+      <figure class="process-figure"><img id="process-image" src="assets/ea2b33f262c8.jpg" alt="產地工作者挑選咖啡果實" width="512" height="279" loading="lazy"/><figcaption><span id="process-caption">01 / 產地人工初選</span><span>THE PURE STANDARD</span></figcaption></figure>
+      <div class="process-steps" role="group" aria-label="探索四道挑豆工序">
+        <button class="process-step" type="button" data-process="0" aria-pressed="true" aria-controls="process-image"><span class="step-number">01</span><span class="step-copy"><strong>產地人工初選</strong><span>從果實開始，挑選成熟與完整的原料，做好風味的第一道把關。</span></span><span class="step-arrow" aria-hidden="true">↗</span></button>
+        <button class="process-step" type="button" data-process="1" aria-pressed="false" aria-controls="process-image"><span class="step-number">02</span><span class="step-copy"><strong>機器光學色選</strong><span>依色澤與外觀辨識，篩選出需要進一步檢視的生豆。</span></span><span class="step-arrow" aria-hidden="true">↗</span></button>
+        <button class="process-step" type="button" data-process="2" aria-pressed="false" aria-controls="process-image"><span class="step-number">03</span><span class="step-copy"><strong>人工細緻複選</strong><span>再以手工檢視細節，挑出破裂、形狀與發育異常的豆子。</span></span><span class="step-arrow" aria-hidden="true">↗</span></button>
+        <button class="process-step" type="button" data-process="3" aria-pressed="false" aria-controls="process-image"><span class="step-number">04</span><span class="step-copy"><strong>烘焙後最終挑豆</strong><span>冷卻後再次檢視熟豆，讓挑選的用心延續到最後一刻。</span></span><span class="step-arrow" aria-hidden="true">↗</span></button>
+        <a class="text-link process-story-link" href="story.html">閱讀完整挑豆故事 <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <p id="process-status" class="sr-only" role="status" aria-live="polite"></p>
+  </section>
+  <section id="guide" class="ritual-section" aria-labelledby="guide-title"><div class="wrapper ritual-layout"><div class="ritual-copy"><p class="section-kicker">MAKE IT YOUR EVERYDAY RITUAL</p><h2 id="guide-title">把一杯咖啡，<br/>變成喜歡的日常。</h2><p>選一款喜歡的豆，留一點時間給自己。<br/>從第一口的香氣，慢慢喝到杯底的餘韻。</p><ol class="ritual-steps"><li><span>01</span><div><h3>從喜歡的風味開始</h3><p>花果、焦糖或可可？先找到讓你心動的味道。</p></div></li><li><span>02</span><div><h3>沖出自己的節奏</h3><p>參考商品的手沖建議，再依口味調整濃淡。</p></div></li><li><span>03</span><div><h3>慢慢感受風味變化</h3><p>從溫熱到冷卻，留意香氣、甜感與口感的層次。</p></div></li></ol><a class="text-link" href="product.html?id=yirgacheffe#brew-guide">看看耶加雪菲的手沖建議 <span aria-hidden="true">↗</span></a></div><div class="ritual-photo"><img src="assets/006e8999088e.jpg" alt="晨光裡的手沖咖啡、筆記本與咖啡豆" width="512" height="279" loading="lazy"/></div></div></section>
+  <section class="faq-section wrapper section-space" id="faq" aria-labelledby="faq-title"><div class="faq-heading"><p class="section-kicker">BEFORE YOUR FIRST CUP</p><h2 id="faq-title">選豆前，<br/>你可能想知道。</h2><a class="text-link" href="about.html#contact">聯絡我們 <span aria-hidden="true">↗</span></a></div><div class="faq-list">
+    <details><summary>第一次選豆，該從哪一款開始？<span aria-hidden="true">+</span></summary><p>喜歡花果香與明亮酸質，可以從耶加雪菲開始；偏好溫和甜感，可以看看哥倫比亞薇拉；喜歡堅果與可可的圓潤口感，則可選安堤瓜花神。風味描述是選豆方向，也會隨沖煮方式而改變。</p></details>
+    <details><summary>「乾淨」的咖啡，是什麼意思？<span aria-hidden="true">+</span></summary><p>我們用「乾淨」描述杯中的風味：讓咖啡本身的香氣、甜感與口感清楚呈現，減少雜澀的干擾。挑豆是其中一環，烘焙與沖煮同樣重要。</p></details>
+    <details><summary>為什麼需要人工與機器一起挑豆？<span aria-hidden="true">+</span></summary><p>機器協助篩選色澤與外觀差異，人工則補上細緻的檢視。從產地到熟豆分階段挑選，讓不同環節各自把關。可以在上方的挑豆工藝區查看四道工序。</p></details>
+    <details><summary>收到咖啡豆後，如何保存？<span aria-hidden="true">+</span></summary><p>取用後把袋口密封，放在陰涼乾燥、避免陽光直射與高溫的地方。依包裝上的烘焙日期與保存資訊安排品飲，也留意開封後香氣的變化。</p></details>
+    <details><summary>想了解商品或合作，怎麼聯絡？<span aria-hidden="true">+</span></summary><p>可以前往<a href="about.html#contact">聯絡與合作頁</a>，留下商品、品飲或合作需求。我們的品牌與工坊介紹也整理在<a href="about.html">關於我們</a>。</p></details>
+  </div></section>
+  <section class="closing-section"><div class="wrapper closing-content"><div><p class="section-kicker">YOUR NEXT GOOD CUP</p><h2>下一杯，<br/>留給你喜歡的風味。</h2></div><a class="closing-button" href="shop.html">探索所有咖啡 <span aria-hidden="true">→</span></a></div></section>
+</main>
+<footer class="site-footer"><div class="wrapper footer-top"><div><a class="brand footer-brand" href="index.html"><span class="store-brand">一遇</span><small>ENCOUNTER COFFEE</small></a><p>把每一顆豆挑好，<br/>把每一天，留給喜歡的咖啡。</p></div><div><h2>探索咖啡</h2><a href="shop.html">所有咖啡</a><a href="#products">依風味選豆</a><a href="#guide">品飲指南</a></div><div><h2>認識我們</h2><a href="story.html">品牌故事</a><a href="#process">挑豆工藝</a><a href="about.html">關於一遇</a></div><div><h2>顧客支援</h2><a href="#faq">常見問題</a><a href="about.html#contact">聯絡與合作</a><a href="checkout.html">購物車與結帳</a></div></div><div class="wrapper footer-bottom"><p>© 2026 一遇 Encounter Coffee</p><a href="#main-content">回到頂部 ↑</a></div></footer>
+<p id="theme-status" class="sr-only" role="status" aria-live="polite"></p>
+<dialog id="coffee-search" class="search-dialog" aria-labelledby="search-title"><form method="dialog" class="search-close"><button class="icon-button" aria-label="關閉搜尋" value="cancel">×</button></form><h2 id="search-title">找到喜歡的咖啡。</h2><p>搜尋首頁精選咖啡的產區、名稱或風味。</p><form id="coffee-search-form"><label class="sr-only" for="coffee-search-input">咖啡名稱、產區或風味</label><input id="coffee-search-input" type="search" placeholder="例如：白桃、哥倫比亞、可可"/><button class="search-submit" type="submit">搜尋 →</button></form><a class="text-link" href="shop.html">瀏覽完整商品選購頁 ↗</a></dialog>
+</body>
+</html>
