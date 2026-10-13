@@ -33,18 +33,33 @@
   const updateMotion=()=>{const paused=root.dataset.motion==='paused'||reducedMotion.matches;motionButton.setAttribute('aria-pressed',String(paused));motionButton.disabled=reducedMotion.matches;document.getElementById('motion-label').textContent=reducedMotion.matches?'已減少動態效果':paused?'播放動畫':'暫停動畫';motionButton.firstElementChild.textContent=paused?'▷':'Ⅱ'};
   motionButton.addEventListener('click',()=>{root.dataset.motion=root.dataset.motion==='paused'?'running':'paused';save('pure-select-motion',root.dataset.motion);updateMotion()});
   reducedMotion.addEventListener('change',updateMotion);updateMotion();
+  const slides=[...document.querySelectorAll('.hero-slide')],slideButtons=[...document.querySelectorAll('[data-slide]')];
+  let currentSlide=0,carouselTimer=null,controlsFocused=false;
+  const stopCarousel=()=>{clearInterval(carouselTimer);carouselTimer=null};
+  const selectSlide=index=>{currentSlide=(index+slides.length)%slides.length;slides.forEach((slide,n)=>slide.classList.toggle('is-active',n===currentSlide));slideButtons.forEach((button,n)=>button.setAttribute('aria-pressed',String(n===currentSlide)));document.getElementById('slide-count').textContent=`${String(currentSlide+1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`};
+  const syncCarousel=()=>{stopCarousel();if(root.dataset.motion!=='paused'&&!reducedMotion.matches&&!document.hidden&&!controlsFocused){const seconds=window.CoffeeStore?.state().settings.carouselSeconds||6;carouselTimer=setInterval(()=>selectSlide(currentSlide+1),seconds*1000)}};
+  document.getElementById('slide-prev').addEventListener('click',()=>{selectSlide(currentSlide-1);syncCarousel()});
+  document.getElementById('slide-next').addEventListener('click',()=>{selectSlide(currentSlide+1);syncCarousel()});
+  slideButtons.forEach(button=>button.addEventListener('click',()=>{selectSlide(Number(button.dataset.slide));syncCarousel()}));
+  const controls=document.querySelector('.carousel-controls');
+  controls.addEventListener('focusin',()=>{controlsFocused=true;stopCarousel()});
+  controls.addEventListener('focusout',event=>{if(!controls.contains(event.relatedTarget)){controlsFocused=false;syncCarousel()}});
+  controls.addEventListener('mouseenter',stopCarousel);controls.addEventListener('mouseleave',syncCarousel);
+  motionButton.addEventListener('click',syncCarousel);reducedMotion.addEventListener('change',syncCarousel);document.addEventListener('visibilitychange',syncCarousel);window.addEventListener('coffee:change',syncCarousel);syncCarousel();
 
-  const cards=[...document.querySelectorAll('[data-flavor-card]')];
+
+  const cards=()=>[...document.querySelectorAll('[data-flavor-card]')];
   const flavorButtons=[...document.querySelectorAll('[data-flavor]')];
   let flavor='all';
   let search='';
   const filterCoffee=()=>{
     let count=0;
-    cards.forEach(card=>{const show=(flavor==='all'||card.dataset.flavorCard===flavor)&&(!search||card.dataset.search.toLocaleLowerCase().includes(search));card.hidden=!show;if(show) count++});
+    cards().forEach(card=>{const show=(flavor==='all'||card.dataset.flavorCard===flavor)&&(!search||card.dataset.search.toLocaleLowerCase().includes(search));card.hidden=!show;if(show) count++});
     flavorButtons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.flavor===flavor)));
     document.getElementById('collection-count').textContent=search?`「${search}」：${count} 款咖啡`:`${count} 款精選咖啡`;
     document.getElementById('coffee-empty').hidden=count!==0;
   };
+  window.addEventListener('coffee:featuredChanged',filterCoffee);filterCoffee();
   flavorButtons.forEach(button=>button.addEventListener('click',()=>{flavor=button.dataset.flavor;search='';filterCoffee()}));
   document.getElementById('clear-search').addEventListener('click',()=>{flavor='all';search='';filterCoffee();flavorButtons[0].focus()});
   const searchDialog=document.getElementById('coffee-search');
