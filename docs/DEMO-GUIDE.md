@@ -56,4 +56,4 @@ node tests/store.test.cjs
 
 ## 實作邊界
 
-`assets/catalog-data.js` 為初始示範資料；`assets/store.js` 管理交易與驗證；`assets/commerce.js` 渲染選購、商品與結帳；`assets/admin.js` 管理後台。庫存依 SKU 彙總，商品顯示最新完成的展示批次，不提供逐包 FIFO 實際追溯。現有品牌故事／關於我們頁保留原內容。若要投入正式營運，登入、角色權限、伺服器資料庫、訂單一致性、付款與物流應另行接入。
+`assets/catalog-data.js` 為初始示範資料；`assets/store.js` 管理交易與驗證；`assets/commerce.js` 渲染選購、商品與結帳；`assets/admin.js` 管理後台。庫存依 SKU 彙總，商品顯示最新完成的展示批次，不提供逐包 FIFO 實際追溯。品牌故事／關於我們已整理為中英文共用的響應式版型，詳見 [英文版與手機排版](ENGLISH-RWD.md)。若要投入正式營運，登入、角色權限、伺服器資料庫、訂單一致性、付款與物流應另行接入。交接給其他代理時請先閱讀 [Agent handoff](AGENT-HANDOFF.md)。
