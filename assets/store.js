@@ -38,7 +38,24 @@
  const statuses=['new','confirmed','packing','shipped','completed','cancelled'];
  const payments=['unpaid','paid','refund_pending','refunded'];
  let memory=copy(window.COFFEE_SEED);
- function state(){let raw;try{raw=localStorage.getItem(KEY)}catch(_){return copy(memory)}if(!raw)return copy(memory);try{const saved=JSON.parse(raw);if(['四選淨豆','一遇'].includes(saved.settings?.shopName))saved.settings.shopName=window.COFFEE_SEED.settings.shopName;return copy(validate(saved))}catch(_){error('已保存的展示資料格式不相容，請先匯出或從設定還原示範資料')}}
+ // Retain old products and their order associations; retire only listings that retain their original demo names.
+ function migrateCatalog(saved){
+  const seed=window.COFFEE_SEED;
+  if(saved.catalogRevision===seed.catalogRevision)return saved;
+  const retired={"kenya-nyeri":"肯亞・涅里 水洗","colombia-huila":"哥倫比亞・薇拉 水洗","guatemala-antigua":"瓜地馬拉・安提瓜 水洗","costa-rica":"哥斯大黎加・塔拉珠 紅蜜","panama-geisha":"巴拿馬・波奎特 藝伎水洗","taiwan-alishan":"台灣・阿里山 山美水洗"};
+  // A custom catalog does not receive new sample products.
+  if(saved.products.some(p=>p.id==='yirgacheffe')&&saved.products.some(p=>p.id==='guji')){
+   saved.products.forEach(p=>{if(retired[p.id]===p.name)p.active=false});
+   const fresh=seed.products.find(p=>p.id==='guatemala-huehuetenango');
+   if(!saved.products.some(p=>p.id===fresh.id)){
+    const product=copy(fresh),batch=copy(seed.batches.find(b=>b.id===fresh.batchId));
+    while(saved.batches.some(b=>b.id===batch.id))batch.id+='-NEW';
+    product.batchId=batch.id;saved.products.unshift(product);saved.batches.push(batch);
+   }
+  }
+  saved.catalogRevision=seed.catalogRevision;return saved;
+ }
+ function state(){let raw;try{raw=localStorage.getItem(KEY)}catch(_){return copy(memory)}if(!raw)return copy(memory);try{const saved=validate(JSON.parse(raw));if(['四選淨豆','一遇'].includes(saved.settings?.shopName))saved.settings.shopName=window.COFFEE_SEED.settings.shopName;return copy(validate(migrateCatalog(saved)))}catch(_){error('已保存的展示資料格式不相容，請先匯出或從設定還原示範資料')}}
  function commit(s){validate(s);s.updatedAt=new Date().toISOString();try{localStorage.setItem(KEY,JSON.stringify(s))}catch(_){error('資料無法保存：請檢查瀏覽器儲存權限或空間。此次修改未套用。')}memory=copy(s);window.dispatchEvent(new CustomEvent('coffee:change'));return copy(s)}
  const mutate=fn=>{const s=state();const result=fn(s);commit(s);return copy(result??s)};
  const getProduct=(s,id)=>s.products.find(p=>p.id===id)||error('找不到商品');
@@ -58,7 +75,7 @@
  function updateBatch(id,status){return mutate(s=>{const b=s.batches.find(b=>b.id===id)||error('批次不存在');if(b.status==='completed')error('已完成批次不能重複入庫');if(status==='completed'&&b.status!=='roasting')error('請先將批次標記為烘焙中');if(!['roasting','completed'].includes(status))error('批次狀態不正確');if(status==='completed'){if(b.roastDate>today())error('未到烘焙日期，不能標记完成');if(b.stockApplied)error('此批次已入庫');const p=getProduct(s,b.productId);p.variants.forEach(v=>{const q=b.packs[String(v.grams)];v.stock+=q;ledger(s,p,v,q,'批次完成 '+id)});b.stockApplied=true;const current=s.batches.find(x=>x.id===p.batchId);if(!current||b.roastDate>=current.roastDate)p.batchId=b.id}b.status=status;return b})}
  function saveSettings(settings){return mutate(s=>{s.settings={...s.settings,...settings};return s.settings})}
  function exportData(){return JSON.stringify(state(),null,2)}
- function importData(raw){const s=validate(JSON.parse(raw));commit(s)}
+ function importData(raw){const s=validate(JSON.parse(raw));commit(migrateCatalog(s))}
  function reset(){return commit(copy(window.COFFEE_SEED))}
  window.addEventListener('storage',event=>{if(event.key===KEY)window.dispatchEvent(new CustomEvent('coffee:change'))});
  window.CoffeeStore={state,cartDetails,addCart,setCart,createOrder,updateOrder,saveProduct,deleteProduct,adjustStock,addBatch,updateBatch,saveSettings,exportData,importData,reset,today,validate,imageURL,statuses,payments};

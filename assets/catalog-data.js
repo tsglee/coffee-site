@@ -2,6 +2,86 @@ window.COFFEE_SEED = {
   "version": 1,
   "products": [
     {
+      "id": "guatemala-huehuetenango",
+      "name": "瓜地馬拉・薇薇特南果 水洗",
+      "country": "瓜地馬拉",
+      "region": "薇薇特南果 Huehuetenango",
+      "variety": "波旁／卡杜拉（示範設定）",
+      "process": "水洗",
+      "roast": "中焙",
+      "flavors": [
+        "太妃糖",
+        "可可",
+        "甜橙"
+      ],
+      "flavor": "sweet",
+      "description": "太妃糖的圓潤甜感，接住甜橙的明亮與可可尾韻。適合喜歡平衡、柔和口感的日常。",
+      "type": "roasted",
+      "active": true,
+      "batchId": "RB-FORWARD-HUEHUE-001",
+      "harvest": "依實際批次確認",
+      "altitude": "依實際批次確認",
+      "brew": {
+        "ratio": "1:15–1:16",
+        "temperature": "88–90°C",
+        "grind": "中細研磨",
+        "note": "展示起始參數，可依口味調整；非本批次實測結果。"
+      },
+      "profile": {
+        "acidity": 2,
+        "sweetness": 4,
+        "body": 4
+      },
+      "gallery": [
+        {
+          "src": "assets/77aa1b42b7dc.jpg",
+          "alt": "薇薇特南果水洗熟豆示意",
+          "label": "烘焙豆"
+        },
+        {
+          "src": "assets/fac5ee6d4d81.jpg",
+          "alt": "瓜地馬拉高地咖啡產區情境示意",
+          "label": "瓜地馬拉產區示意"
+        },
+        {
+          "src": "assets/coffee-roast-hero.jpg",
+          "alt": "烘焙豆紋理示意",
+          "label": "豆子細節"
+        },
+        {
+          "src": "assets/catalog/packaging.jpg",
+          "alt": "咖啡豆袋包裝示意，非實際品牌包裝",
+          "label": "包裝示意"
+        },
+        {
+          "src": "assets/99e5e5881088.jpg",
+          "alt": "杯中咖啡與品飲情境示意",
+          "label": "品飲情境"
+        },
+        {
+          "src": "assets/5f4e97466f3f.jpg",
+          "alt": "咖啡豆烘焙冷卻情境示意",
+          "label": "烘焙情境"
+        }
+      ],
+      "variants": [
+        {
+          "sku": "guatemala-huehuetenango-250",
+          "grams": 250,
+          "price": 460,
+          "stock": 32
+        },
+        {
+          "sku": "guatemala-huehuetenango-500",
+          "grams": 500,
+          "price": 860,
+          "stock": 16
+        }
+      ],
+      "notes": "示範熟豆選品；生產批次、價格、庫存與烘焙資料皆為展示設定。",
+      "placeholder": true
+    },
+    {
       "id": "yirgacheffe",
       "name": "衣索比亞・耶加雪菲 水洗",
       "country": "衣索比亞",
@@ -79,14 +159,8 @@ window.COFFEE_SEED = {
           "stock": 12
         }
       ],
-      "reference": {
-        "brand": "kafeD",
-        "price": 450,
-        "grams": 150,
-        "url": "https://shop.kafed.com.tw/products/bean-yirgacheffe",
-        "checkedAt": "2026-10-13"
-      },
-      "notes": "示範熟豆選品；生產批次、價格、庫存與烘焙資料皆為展示設定。"
+      "notes": "示範熟豆選品；生產批次、價格、庫存與烘焙資料皆為展示設定。",
+      "placeholder": true
     },
     {
       "id": "guji",
@@ -166,273 +240,8 @@ window.COFFEE_SEED = {
           "stock": 13
         }
       ],
-      "reference": {
-        "brand": "哈本",
-        "price": 550,
-        "grams": 200,
-        "url": "https://www.happen.coffee/bean-hambela-200g",
-        "checkedAt": "2026-10-13"
-      },
-      "notes": "示範熟豆選品；生產批次、價格、庫存與烘焙資料皆為展示設定。"
-    },
-    {
-      "id": "kenya-nyeri",
-      "name": "肯亞・涅里 水洗",
-      "country": "肯亞",
-      "region": "涅里",
-      "variety": "SL28、SL34",
-      "process": "水洗",
-      "roast": "淺焙",
-      "flavors": [
-        "西洋梨",
-        "醋栗",
-        "紅莓",
-        "茶梅"
-      ],
-      "flavor": "floral",
-      "description": "梨子的甜味與醋栗、紅莓果酸交錯，收尾帶茶梅般的酸甜。",
-      "type": "roasted",
-      "active": true,
-      "batchId": "RB-2610-003",
-      "harvest": "依實際批次確認",
-      "altitude": "1,700–1,800m（參考批次）",
-      "brew": {
-        "ratio": "1:15–1:16",
-        "temperature": "90–92°C",
-        "grind": "中細研磨",
-        "note": "展示起始參數，可依口味調整；非本批次實測結果。"
-      },
-      "profile": {
-        "acidity": 4,
-        "sweetness": 4,
-        "body": 2
-      },
-      "gallery": [
-        {
-          "src": "assets/catalog/beans-light.jpg",
-          "alt": "肯亞・涅里 水洗烘焙豆示意",
-          "label": "烘焙豆"
-        },
-        {
-          "src": "assets/catalog/origin-kenya.jpg",
-          "alt": "肯亞產區景觀示意，非特定莊園實拍",
-          "label": "產區景觀"
-        },
-        {
-          "src": "assets/coffee-roast-hero.jpg",
-          "alt": "烘焙豆紋理示意",
-          "label": "豆子細節"
-        },
-        {
-          "src": "assets/catalog/packaging.jpg",
-          "alt": "咖啡豆袋包裝示意，非實際品牌包裝",
-          "label": "包裝示意"
-        },
-        {
-          "src": "assets/99e5e5881088.jpg",
-          "alt": "杯中咖啡與品飲情境示意",
-          "label": "品飲情境"
-        },
-        {
-          "src": "assets/5f4e97466f3f.jpg",
-          "alt": "咖啡豆烘焙冷卻情境示意",
-          "label": "烘焙情境"
-        }
-      ],
-      "variants": [
-        {
-          "sku": "kenya-nyeri-250",
-          "grams": 250,
-          "price": 680,
-          "stock": 28
-        },
-        {
-          "sku": "kenya-nyeri-500",
-          "grams": 500,
-          "price": 1290,
-          "stock": 14
-        }
-      ],
-      "reference": {
-        "brand": "Taster’s",
-        "price": 720,
-        "grams": 227,
-        "url": "https://www.tasterscoffee.com/zh-hant/products/kenya-nyeri-gititu-factory-aa-top-washed-light-227%C2%B15g",
-        "checkedAt": "2026-10-13"
-      },
-      "notes": "示範熟豆選品；生產批次、價格、庫存與烘焙資料皆為展示設定。"
-    },
-    {
-      "id": "colombia-huila",
-      "name": "哥倫比亞・薇拉 水洗",
-      "country": "哥倫比亞",
-      "region": "薇拉 Huila",
-      "variety": "依批次確認",
-      "process": "水洗",
-      "roast": "中焙",
-      "flavors": [
-        "杏仁",
-        "胡桃",
-        "桃子"
-      ],
-      "flavor": "sweet",
-      "description": "柔和的杏仁與胡桃香氣，接續桃子的清新果味，口感滑順。",
-      "type": "roasted",
-      "active": true,
-      "batchId": "RB-2610-004",
-      "harvest": "依實際批次確認",
-      "altitude": "依實際批次確認",
-      "brew": {
-        "ratio": "1:15–1:16",
-        "temperature": "88–90°C",
-        "grind": "中細研磨",
-        "note": "展示起始參數，可依口味調整；非本批次實測結果。"
-      },
-      "profile": {
-        "acidity": 2,
-        "sweetness": 4,
-        "body": 4
-      },
-      "gallery": [
-        {
-          "src": "assets/b57b40299e6b.jpg",
-          "alt": "哥倫比亞・薇拉 水洗烘焙豆示意",
-          "label": "烘焙豆"
-        },
-        {
-          "src": "assets/db49b2c4822d.jpg",
-          "alt": "哥倫比亞產區景觀示意，非特定莊園實拍",
-          "label": "產區景觀"
-        },
-        {
-          "src": "assets/coffee-roast-hero.jpg",
-          "alt": "烘焙豆紋理示意",
-          "label": "豆子細節"
-        },
-        {
-          "src": "assets/catalog/packaging.jpg",
-          "alt": "咖啡豆袋包裝示意，非實際品牌包裝",
-          "label": "包裝示意"
-        },
-        {
-          "src": "assets/99e5e5881088.jpg",
-          "alt": "杯中咖啡與品飲情境示意",
-          "label": "品飲情境"
-        },
-        {
-          "src": "assets/5f4e97466f3f.jpg",
-          "alt": "咖啡豆烘焙冷卻情境示意",
-          "label": "烘焙情境"
-        }
-      ],
-      "variants": [
-        {
-          "sku": "colombia-huila-250",
-          "grams": 250,
-          "price": 450,
-          "stock": 30
-        },
-        {
-          "sku": "colombia-huila-500",
-          "grams": 500,
-          "price": 850,
-          "stock": 15
-        }
-      ],
-      "reference": {
-        "brand": "氧氣咖啡",
-        "price": 550,
-        "grams": 227,
-        "url": "https://www.breathingcoffee.com.tw/products/colombiahuilaelitecoffeebeans",
-        "checkedAt": "2026-10-13"
-      },
-      "notes": "示範熟豆選品；生產批次、價格、庫存與烘焙資料皆為展示設定。"
-    },
-    {
-      "id": "guatemala-antigua",
-      "name": "瓜地馬拉・安提瓜 水洗",
-      "country": "瓜地馬拉",
-      "region": "安提瓜",
-      "variety": "依批次確認",
-      "process": "水洗",
-      "roast": "中焙",
-      "flavors": [
-        "牛奶巧克力",
-        "紅糖",
-        "堅果"
-      ],
-      "flavor": "cocoa",
-      "description": "牛奶巧克力和紅糖的溫暖甜感，堅果香氣帶來圓潤口感。",
-      "type": "roasted",
-      "active": true,
-      "batchId": "RB-2610-005",
-      "harvest": "依實際批次確認",
-      "altitude": "依實際批次確認",
-      "brew": {
-        "ratio": "1:15–1:16",
-        "temperature": "88–90°C",
-        "grind": "中細研磨",
-        "note": "展示起始參數，可依口味調整；非本批次實測結果。"
-      },
-      "profile": {
-        "acidity": 2,
-        "sweetness": 4,
-        "body": 4
-      },
-      "gallery": [
-        {
-          "src": "assets/77aa1b42b7dc.jpg",
-          "alt": "瓜地馬拉・安提瓜 水洗烘焙豆示意",
-          "label": "烘焙豆"
-        },
-        {
-          "src": "assets/fac5ee6d4d81.jpg",
-          "alt": "瓜地馬拉產區景觀示意，非特定莊園實拍",
-          "label": "產區景觀"
-        },
-        {
-          "src": "assets/coffee-roast-hero.jpg",
-          "alt": "烘焙豆紋理示意",
-          "label": "豆子細節"
-        },
-        {
-          "src": "assets/catalog/packaging.jpg",
-          "alt": "咖啡豆袋包裝示意，非實際品牌包裝",
-          "label": "包裝示意"
-        },
-        {
-          "src": "assets/99e5e5881088.jpg",
-          "alt": "杯中咖啡與品飲情境示意",
-          "label": "品飲情境"
-        },
-        {
-          "src": "assets/5f4e97466f3f.jpg",
-          "alt": "咖啡豆烘焙冷卻情境示意",
-          "label": "烘焙情境"
-        }
-      ],
-      "variants": [
-        {
-          "sku": "guatemala-antigua-250",
-          "grams": 250,
-          "price": 420,
-          "stock": 32
-        },
-        {
-          "sku": "guatemala-antigua-500",
-          "grams": 500,
-          "price": 790,
-          "stock": 16
-        }
-      ],
-      "reference": {
-        "brand": "暖窩",
-        "price": 380,
-        "grams": 227,
-        "url": "https://shop.cozyhousecoffee.com/products/guatemala-antigua-bella-carmona--washed",
-        "checkedAt": "2026-10-13"
-      },
-      "notes": "示範熟豆選品；生產批次、價格、庫存與烘焙資料皆為展示設定。"
+      "notes": "示範熟豆選品；生產批次、價格、庫存與烘焙資料皆為展示設定。",
+      "placeholder": true
     },
     {
       "id": "brazil-cerrado",
@@ -512,101 +321,8 @@ window.COFFEE_SEED = {
           "stock": 16
         }
       ],
-      "reference": {
-        "brand": "魏爵",
-        "price": 200,
-        "grams": 227,
-        "url": "https://www.weijecoffee.com.tw/product/detail/149",
-        "checkedAt": "2026-10-13"
-      },
-      "notes": "示範熟豆選品；生產批次、價格、庫存與烘焙資料皆為展示設定。"
-    },
-    {
-      "id": "costa-rica",
-      "name": "哥斯大黎加・塔拉珠 紅蜜",
-      "country": "哥斯大黎加",
-      "region": "塔拉珠",
-      "variety": "Sudan Rume",
-      "process": "紅蜜處理",
-      "roast": "淺焙",
-      "flavors": [
-        "芒果",
-        "鳳梨",
-        "草莓",
-        "葡萄乾"
-      ],
-      "flavor": "sweet",
-      "description": "熱帶水果香氣與莓果酸甜，果醬和葡萄乾甜感在杯中延伸。",
-      "type": "roasted",
-      "active": true,
-      "batchId": "RB-2610-007",
-      "harvest": "依實際批次確認",
-      "altitude": "依實際批次確認",
-      "brew": {
-        "ratio": "1:15–1:16",
-        "temperature": "90–92°C",
-        "grind": "中細研磨",
-        "note": "展示起始參數，可依口味調整；非本批次實測結果。"
-      },
-      "profile": {
-        "acidity": 2,
-        "sweetness": 4,
-        "body": 2
-      },
-      "gallery": [
-        {
-          "src": "assets/catalog/beans-light.jpg",
-          "alt": "哥斯大黎加・塔拉珠 紅蜜烘焙豆示意",
-          "label": "烘焙豆"
-        },
-        {
-          "src": "assets/catalog/origin-costarica.jpg",
-          "alt": "哥斯大黎加產區景觀示意，非特定莊園實拍",
-          "label": "產區景觀"
-        },
-        {
-          "src": "assets/coffee-roast-hero.jpg",
-          "alt": "烘焙豆紋理示意",
-          "label": "豆子細節"
-        },
-        {
-          "src": "assets/catalog/packaging.jpg",
-          "alt": "咖啡豆袋包裝示意，非實際品牌包裝",
-          "label": "包裝示意"
-        },
-        {
-          "src": "assets/99e5e5881088.jpg",
-          "alt": "杯中咖啡與品飲情境示意",
-          "label": "品飲情境"
-        },
-        {
-          "src": "assets/5f4e97466f3f.jpg",
-          "alt": "咖啡豆烘焙冷卻情境示意",
-          "label": "烘焙情境"
-        }
-      ],
-      "variants": [
-        {
-          "sku": "costa-rica-250",
-          "grams": 250,
-          "price": 620,
-          "stock": 36
-        },
-        {
-          "sku": "costa-rica-500",
-          "grams": 500,
-          "price": 1170,
-          "stock": 18
-        }
-      ],
-      "reference": {
-        "brand": "呈咖啡",
-        "price": 650,
-        "grams": 200,
-        "url": "https://www.chengcoffee.com.tw/collections/蜜處理法/products/哥斯大黎加-塔拉珠-莉亞微處理廠-蘇丹汝魅-紅蜜處理-咖啡豆-200克-淺焙",
-        "checkedAt": "2026-10-13"
-      },
-      "notes": "示範熟豆選品；生產批次、價格、庫存與烘焙資料皆為展示設定。"
+      "notes": "示範熟豆選品；生產批次、價格、庫存與烘焙資料皆為展示設定。",
+      "placeholder": true
     },
     {
       "id": "mandheling",
@@ -686,188 +402,8 @@ window.COFFEE_SEED = {
           "stock": 18
         }
       ],
-      "reference": {
-        "brand": "Taster’s",
-        "price": 540,
-        "grams": 227,
-        "url": "https://www.tasterscoffee.com/products/indonesia-sumatra-lintong-mandheling-onan-ganjang-wet-hulled-medium-dark-227%C2%B15g-1",
-        "checkedAt": "2026-10-13"
-      },
-      "notes": "示範熟豆選品；生產批次、價格、庫存與烘焙資料皆為展示設定。"
-    },
-    {
-      "id": "panama-geisha",
-      "name": "巴拿馬・波奎特 藝伎水洗",
-      "country": "巴拿馬",
-      "region": "波奎特",
-      "variety": "Geisha 藝伎",
-      "process": "水洗",
-      "roast": "淺焙",
-      "flavors": [
-        "檸檬",
-        "白葡萄",
-        "梅子",
-        "香草蜂蜜"
-      ],
-      "flavor": "floral",
-      "description": "檸檬與萊姆明亮開場，白葡萄和梅子的果甜轉為香草與蜂蜜尾韻。",
-      "type": "roasted",
-      "active": true,
-      "batchId": "RB-2610-009",
-      "harvest": "依實際批次確認",
-      "altitude": "依實際批次確認",
-      "brew": {
-        "ratio": "1:15–1:16",
-        "temperature": "90–92°C",
-        "grind": "中細研磨",
-        "note": "展示起始參數，可依口味調整；非本批次實測結果。"
-      },
-      "profile": {
-        "acidity": 4,
-        "sweetness": 4,
-        "body": 2
-      },
-      "gallery": [
-        {
-          "src": "assets/catalog/beans-light.jpg",
-          "alt": "巴拿馬・波奎特 藝伎水洗烘焙豆示意",
-          "label": "烘焙豆"
-        },
-        {
-          "src": "assets/catalog/origin-panama.jpg",
-          "alt": "巴拿馬產區景觀示意，非特定莊園實拍",
-          "label": "產區景觀"
-        },
-        {
-          "src": "assets/coffee-roast-hero.jpg",
-          "alt": "烘焙豆紋理示意",
-          "label": "豆子細節"
-        },
-        {
-          "src": "assets/catalog/packaging.jpg",
-          "alt": "咖啡豆袋包裝示意，非實際品牌包裝",
-          "label": "包裝示意"
-        },
-        {
-          "src": "assets/99e5e5881088.jpg",
-          "alt": "杯中咖啡與品飲情境示意",
-          "label": "品飲情境"
-        },
-        {
-          "src": "assets/5f4e97466f3f.jpg",
-          "alt": "咖啡豆烘焙冷卻情境示意",
-          "label": "烘焙情境"
-        }
-      ],
-      "variants": [
-        {
-          "sku": "panama-geisha-250",
-          "grams": 250,
-          "price": 1080,
-          "stock": 3
-        },
-        {
-          "sku": "panama-geisha-500",
-          "grams": 500,
-          "price": 2050,
-          "stock": 0
-        }
-      ],
-      "reference": {
-        "brand": "1980 CAFE",
-        "price": 980,
-        "grams": 227,
-        "url": "https://www.1980cafetw.com/light_geisha",
-        "checkedAt": "2026-10-13"
-      },
-      "notes": "示範熟豆選品；生產批次、價格、庫存與烘焙資料皆為展示設定。"
-    },
-    {
-      "id": "taiwan-alishan",
-      "name": "台灣・阿里山 山美水洗",
-      "country": "台灣",
-      "region": "嘉義阿里山山美",
-      "variety": "Typica 鐵比卡",
-      "process": "水洗",
-      "roast": "中焙",
-      "flavors": [
-        "蔗糖",
-        "木質香",
-        "熟茶",
-        "回甘花香"
-      ],
-      "flavor": "sweet",
-      "description": "蔗糖甜味襯托木質香氣，入口有熟茶般厚度，回甘留下一點花香。",
-      "type": "roasted",
-      "active": true,
-      "batchId": "RB-2610-010",
-      "harvest": "依實際批次確認",
-      "altitude": "約 1,300m（參考批次）",
-      "brew": {
-        "ratio": "1:15",
-        "temperature": "91–92°C",
-        "grind": "中細研磨",
-        "note": "參考哈本阿里山商品的手沖起始參數；本展示商品非同一實際批次，可依口味調整。"
-      },
-      "profile": {
-        "acidity": 2,
-        "sweetness": 4,
-        "body": 4
-      },
-      "gallery": [
-        {
-          "src": "assets/catalog/beans-medium.jpg",
-          "alt": "台灣・阿里山 山美水洗烘焙豆示意",
-          "label": "烘焙豆"
-        },
-        {
-          "src": "assets/catalog/origin-taiwan.jpg",
-          "alt": "台灣產區景觀示意，非特定莊園實拍",
-          "label": "產區景觀"
-        },
-        {
-          "src": "assets/coffee-roast-hero.jpg",
-          "alt": "烘焙豆紋理示意",
-          "label": "豆子細節"
-        },
-        {
-          "src": "assets/catalog/packaging.jpg",
-          "alt": "咖啡豆袋包裝示意，非實際品牌包裝",
-          "label": "包裝示意"
-        },
-        {
-          "src": "assets/99e5e5881088.jpg",
-          "alt": "杯中咖啡與品飲情境示意",
-          "label": "品飲情境"
-        },
-        {
-          "src": "assets/5f4e97466f3f.jpg",
-          "alt": "咖啡豆烘焙冷卻情境示意",
-          "label": "烘焙情境"
-        }
-      ],
-      "variants": [
-        {
-          "sku": "taiwan-alishan-250",
-          "grams": 250,
-          "price": 1280,
-          "stock": 42
-        },
-        {
-          "sku": "taiwan-alishan-500",
-          "grams": 500,
-          "price": 2430,
-          "stock": 21
-        }
-      ],
-      "reference": {
-        "brand": "哈本",
-        "price": 1100,
-        "grams": 200,
-        "url": "https://www.happen.coffee/alishan-bean-wash-0.5p",
-        "checkedAt": "2026-10-13"
-      },
-      "notes": "示範熟豆選品；生產批次、價格、庫存與烘焙資料皆為展示設定。"
+      "notes": "示範熟豆選品；生產批次、價格、庫存與烘焙資料皆為展示設定。",
+      "placeholder": true
     }
   ],
   "batches": [
@@ -900,36 +436,8 @@ window.COFFEE_SEED = {
       "stockApplied": true
     },
     {
-      "id": "RB-2610-003",
-      "productId": "kenya-nyeri",
-      "roastDate": "2026-10-10",
-      "durationSeconds": 600,
-      "roast": "淺焙",
-      "status": "completed",
-      "packs": {
-        "250": 28,
-        "500": 14
-      },
-      "notes": "期初示範批次；庫存為可售包數，已列入期初庫存。",
-      "stockApplied": true
-    },
-    {
-      "id": "RB-2610-004",
-      "productId": "colombia-huila",
-      "roastDate": "2026-10-11",
-      "durationSeconds": 615,
-      "roast": "中焙",
-      "status": "completed",
-      "packs": {
-        "250": 30,
-        "500": 15
-      },
-      "notes": "期初示範批次；庫存為可售包數，已列入期初庫存。",
-      "stockApplied": true
-    },
-    {
-      "id": "RB-2610-005",
-      "productId": "guatemala-antigua",
+      "id": "RB-FORWARD-HUEHUE-001",
+      "productId": "guatemala-huehuetenango",
       "roastDate": "2026-10-10",
       "durationSeconds": 630,
       "roast": "中焙",
@@ -956,20 +464,6 @@ window.COFFEE_SEED = {
       "stockApplied": true
     },
     {
-      "id": "RB-2610-007",
-      "productId": "costa-rica",
-      "roastDate": "2026-10-10",
-      "durationSeconds": 660,
-      "roast": "淺焙",
-      "status": "completed",
-      "packs": {
-        "250": 36,
-        "500": 18
-      },
-      "notes": "期初示範批次；庫存為可售包數，已列入期初庫存。",
-      "stockApplied": true
-    },
-    {
       "id": "RB-2610-008",
       "productId": "mandheling",
       "roastDate": "2026-10-11",
@@ -979,34 +473,6 @@ window.COFFEE_SEED = {
       "packs": {
         "250": 38,
         "500": 19
-      },
-      "notes": "期初示範批次；庫存為可售包數，已列入期初庫存。",
-      "stockApplied": true
-    },
-    {
-      "id": "RB-2610-009",
-      "productId": "panama-geisha",
-      "roastDate": "2026-10-10",
-      "durationSeconds": 690,
-      "roast": "淺焙",
-      "status": "completed",
-      "packs": {
-        "250": 3,
-        "500": 0
-      },
-      "notes": "期初示範批次；庫存為可售包數，已列入期初庫存。",
-      "stockApplied": true
-    },
-    {
-      "id": "RB-2610-010",
-      "productId": "taiwan-alishan",
-      "roastDate": "2026-10-11",
-      "durationSeconds": 705,
-      "roast": "中焙",
-      "status": "completed",
-      "packs": {
-        "250": 42,
-        "500": 21
       },
       "notes": "期初示範批次；庫存為可售包數，已列入期初庫存。",
       "stockApplied": true
@@ -1178,5 +644,6 @@ window.COFFEE_SEED = {
     "carouselSeconds": 6,
     "supportEmail": "contact@pureselectcoffee.tw"
   },
-  "updatedAt": "2026-10-13T09:00:00+08:00"
+  "updatedAt": "2026-10-13T09:00:00+08:00",
+  "catalogRevision": "forward-five-v1"
 };

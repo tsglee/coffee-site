@@ -4,7 +4,7 @@ This document is the starting point for another AI agent receiving the ZIP. It d
 
 ## Branch update: forward (2026-10-22)
 
-The user requested the exact branch name `forward`, the new brand 佛我咖啡 / FORWARD COFFEE, and integration of the local `coffee_class_site` course. This branch adds `courses.html` and course assets/content while preserving the bean store. It is isolated from deployed `main`; do not merge or replace the existing public site without a further user request. See `docs/FORWARD-INTEGRATION.md` for the imported course facts, provenance and checks.
+The user requested the exact branch name `forward`, the new brand 佛我咖啡 / FORWARD COFFEE, and integration of the local `coffee_class_site` course. This branch keeps the photographic bean storefront as the primary homepage, displays five sample coffees and adds the complete `courses.html` workshop. Smooth reveal effects and optional cross-document fades share motion preferences across the storefront. Both businesses link to one another within the buying/learning journey. It is isolated from deployed `main`; do not merge or replace the existing public site without a further user request. See `docs/FORWARD-INTEGRATION.md` for the imported course facts, provenance and checks.
 
 ## 1. Scope and design
 
@@ -16,7 +16,7 @@ Implemented features:
 
 - Three full-screen hero photos: coffee beans, roastery and morning brewing. Default six-second fading carousel, manual controls, motion pause, hidden-tab handling and reduced-motion support.
 - Four homepage palettes: `terra`, `forest`, `cobalt`, `nocturne`.
-- Ten **roasted** coffee products, not green beans. Each has six distinct gallery entries, origin imagery, flavor notes, references, roast metadata and independent 250g/500g SKUs. Some generic bean/packaging/brewing images are shared between products.
+- Five **sample roasted** coffee products: Huehuetenango, Yirgacheffe, Guji, Brazil Cerrado and Mandheling. Each has six distinct gallery entries, origin imagery, flavor notes, roast metadata and independent 250g/500g SKUs. Some generic bean/packaging/brewing images are shared between products.
 - Functional local cart and order creation, with transactional stock changes and order snapshots.
 - Operable demo admin: overview, product CRUD/visibility/images, stock adjustments, roast schedules/completion, order workflow, reports, settings and CSV/JSON export/import/reset.
 - Chinese and English storefronts and admin UI, with responsive layouts and language-preserving navigation.
@@ -47,11 +47,12 @@ All runtime images are local under `assets/`, including the generated JPEG asset
 | `assets/home.js` | Homepage menus, themes, photo carousel, motion controls, featured filters/search and selection steps |
 | `assets/en-dictionary.js` | English copy keyed by original Chinese text |
 | `assets/i18n.js` | Language selection, text/attribute translation, dynamic content observer and internal link localization |
-| `assets/home.css` | Shared palette tokens and homepage design |
+| `assets/home.css` | Shared palette tokens and original homepage design |
+| `assets/premium.css`, `assets/motion.js` | Bean-first editorial layout, unified course invitations, progressive reveal and reduced-motion handling |
 | `assets/commerce.css` | Storefront/admin components and base responsive layouts |
 | `assets/responsive.css` | English typography, language switch, editorial layouts and mobile corrections |
 | `assets/catalog/` | Twelve added origin/bean/packaging/hero JPEG illustrations |
-| `tests/store.test.cjs` | Eleven data/transaction/compatibility checks using a mocked localStorage |
+| `tests/store.test.cjs` | Fourteen data/transaction/compatibility checks using a mocked localStorage |
 | `tests/i18n.test.cjs` | Five localization/link/data-integrity checks |
 | `scripts/package_site.py` | Reproducible committed-source ZIP and hash-manifest creation/verification |
 
@@ -71,7 +72,7 @@ The locale comes from `lang=en`; absent or other values select Traditional Chine
 
 Localization translates visible strings, titles, descriptions, accessibility labels, image alt text and supported dynamic messages. Option labels may be translated but their **values stay original** so filters and forms still match the model. English storefront/admin search includes translated catalog text.
 
-The initial ten products have English display translations. Admin edits the **original shared content**, with an explanatory note. A new user-entered Chinese sentence is not automatically machine-translated; add appropriate dictionary entries, or implement explicit bilingual fields if the future scope requires independent translations. JSON backups retain raw state; English CSV exports translate known labels/content. Do not translate SKU IDs, record IDs, enum values, backup JSON or user-entered form data in place.
+The five current sample products and historical catalog have English display translations. Admin edits the **original shared content**, with an explanatory note. A new user-entered Chinese sentence is not automatically machine-translated; add appropriate dictionary entries, or implement explicit bilingual fields if the future scope requires independent translations. JSON backups retain raw state; English CSV exports translate known labels/content. Do not translate SKU IDs, record IDs, enum values, backup JSON or user-entered form data in place.
 
 ## 5. Data model and invariants
 
@@ -105,7 +106,7 @@ Important rules:
 
 ## 6. Content and asset provenance
 
-The initial catalog covers Yirgacheffe, Guji, Kenya Nyeri, Colombia Huila, Guatemala Antigua, Brazil Cerrado, Costa Rica Tarrazú, Indonesia Lintong Mandheling, Panama Geisha and Taiwan Alishan.
+The current catalog contains five replaceable samples, led by Guatemala Huehuetenango. See `docs/FORWARD-CATALOG.md` for prices, IDs, editing guidance and saved-data migration. The original ten-coffee research remains a historical reference, not a specification or supplier quote for the current catalog.
 
 - `docs/coffee-price-survey-2026-10-13.md`: official source links, original weights/prices, researched flavor/variety information and unknowns. The site's own 250g/500g prices are separate **demo prices**, not supplier quotes or direct normalized comparisons.
 - `docs/catalog-images.md`: added image index and website paths.
@@ -125,14 +126,14 @@ node tests/i18n.test.cjs
 node tests/course.test.cjs
 ```
 
-Expected on `forward`: 12 store checks, 5 localization checks and 4 course-integration checks pass. They cover valid seed/gallery/SKUs, live-price order snapshots, overselling, cancellation, shipping/tracking, batch idempotency, storage rollback, import validation, historical product deletion, old-brand migration, English product copy, link/query/hash preservation and raw-data integrity.
+Expected on `forward`: 14 store checks, 5 localization checks and 4 course-integration checks pass. They cover valid seed/gallery/SKUs, live-price order snapshots, overselling, cancellation, shipping/tracking, batch idempotency, storage rollback, import validation, historical product deletion, old-brand migration, English product copy, link/query/hash preservation and raw-data integrity.
 
 Also check JavaScript syntax with `node --check` for changed files, local asset/link references and `git diff --check`. Use a real browser for interactions and visual verification. Previous viewport checks: 320×740, 390×844, 768×1024, 1280×900, and an 844×390 landscape homepage. Ten English product pages have been checked at 320px; the long Mandheling origin/altitude field exposed an overflow and was fixed using shrinkable grid columns.
 
 Suggested manual regression:
 
 1. Both languages: hero auto/manual controls, pause, menu, palette and featured search/filter.
-2. English catalog: search `mango`, filter Kenya, sort by price and roast date.
+2. English catalog: search `mango`, filter Guatemala, sort by price and roast date.
 3. Product: all gallery controls/lightbox, 250g/500g price and stock, bag-count × weight.
 4. Switch languages on a product link; preserve ID/hash and cart data.
 5. Demo checkout and admin cancellation; verify stock is deducted/restored once.
