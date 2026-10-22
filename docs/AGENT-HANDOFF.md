@@ -10,7 +10,7 @@ The user requested the exact branch name `forward`, the new brand 佛我咖啡 /
 
 The user asked for a distinctive photographic coffee brand site, inspired by the full-screen, slowly fading images on Encounter Coffee's reference site. The implementation is original project code and illustrative images; it is not a copy of that site's source or its merchant backend.
 
-The brand is **佛我咖啡**, with **FORWARD COFFEE** in English. Do not restore the previous 四選淨豆 / Pure Select branding. The old `pure-select-*` storage keys remain intentionally compatible with existing browsers. The store model maps the previous default shop name to the current default without discarding orders or inventory; custom shop names are preserved.
+The brand is **佛我咖啡**, with **FORWARD COFFEE** in English. The workshop name stays **好好手沖** in both locales by user request; do not translate the course name. Do not restore the previous 四選淨豆 / Pure Select branding. The old `pure-select-*` storage keys remain intentionally compatible with existing browsers. The store model maps the previous default shop name to the current default without discarding orders or inventory; custom shop names are preserved.
 
 Implemented features:
 

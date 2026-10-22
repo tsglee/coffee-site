@@ -2,7 +2,6 @@ window.COFFEE_COURSE = {
   "brand": "佛我咖啡",
   "english": "Forward Coffee",
   "name": "好好手沖",
-  "nameEnglish": "Good Good Pour",
   "title": "新手也能照著做，沖出自己的好咖啡。",
   "subtitle": "四小時，從手沖 SOP 到世界冠軍 4:6 沖法，學會調整風味，也學會挑豆。",
   "price": "NT$1,800",

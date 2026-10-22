@@ -13,7 +13,8 @@ function test(label, fn) { fn(); console.log('PASS', label); }
 
 test('imported course preserves tuition, duration, instructors, locations and original LINE destination', () => {
   assert.equal(c.brand, '佛我咖啡');
-  assert.equal(c.nameEnglish, 'Good Good Pour');
+  assert.equal(c.name, '好好手沖');
+  assert.equal(t(c.name), '好好手沖');
   assert.equal(c.priceNumber, 1800);
   assert.equal(c.durationHours, 4);
   assert.equal(c.line, 'https://lin.ee/5bkhZu1');
@@ -27,7 +28,7 @@ test('imported course preserves tuition, duration, instructors, locations and or
 
 test('all imported course prose, FAQ and comparison rows have English translations without changing source content', () => {
   const before = JSON.stringify(c);
-  const copy = [c.name, c.subtitle, ...c.parameters.flatMap(p => [p.title, p.question, p.description, p.tip, p.alt]), ...c.journey.flat(), ...c.comparison.flat(), ...c.faqs.flat()];
+  const copy = [c.subtitle, ...c.parameters.flatMap(p => [p.title, p.question, p.description, p.tip, p.alt]), ...c.journey.flat(), ...c.comparison.flat(), ...c.faqs.flat()];
   for (const value of copy) assert.ok(!/[\u4e00-\u9fff]/.test(t(value)), value);
   assert.equal(JSON.stringify(c), before);
 });

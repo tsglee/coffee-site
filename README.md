@@ -1,6 +1,6 @@
 # 佛我咖啡 / Forward Coffee
 
-The `forward` branch combines a bilingual roasted-coffee storefront with the Good Good Pour workshop under 佛我咖啡 / FORWARD COFFEE. It is not merged into the existing public `main` site. See [course integration notes](docs/FORWARD-INTEGRATION.md) and the [five-coffee catalog guide](docs/FORWARD-CATALOG.md).
+The `forward` branch combines a bilingual roasted-coffee storefront with the 好好手沖 workshop under 佛我咖啡 / FORWARD COFFEE. It is not merged into the existing public `main` site. See [course integration notes](docs/FORWARD-INTEGRATION.md) and the [five-coffee catalog guide](docs/FORWARD-CATALOG.md).
 
 A bilingual, responsive roasted-coffee storefront and operable administration demo. Plain HTML, CSS and JavaScript; no build step, npm installation, backend or database is required.
 
@@ -24,7 +24,7 @@ Open http://127.0.0.1:4173/?lang=en or http://127.0.0.1:4173/?lang=zh. Stop the 
 | File | Purpose |
 | --- | --- |
 | `index.html` | Three-photo hero carousel, four palettes, five sample coffees, selection story, brew guide and FAQ |
-| `courses.html` | Complete Good Good Pour workshop, instructors, materials, FAQ and original LINE inquiry link |
+| `courses.html` | Complete 好好手沖 workshop, instructors, materials, FAQ and original LINE inquiry link |
 | `shop.html` | Five sample roasted coffees with origin/roast filters, English/Chinese search and sorting |
 | `product.html?id=guji` | Six-image gallery, 250g/500g bags, stock, flavor, origin, roast date and duration |
 | `checkout.html` | Shared demo cart, weight/price calculations and local demo orders |
