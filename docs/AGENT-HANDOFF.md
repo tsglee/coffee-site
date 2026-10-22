@@ -6,6 +6,10 @@ This document is the starting point for another AI agent receiving the ZIP. It d
 
 The user requested the exact branch name `forward`, the new brand 佛我咖啡 / FORWARD COFFEE, and integration of the local `coffee_class_site` course. This branch keeps the photographic bean storefront as the primary homepage, displays five sample coffees and adds the complete `courses.html` workshop. Smooth reveal effects and optional cross-document fades share motion preferences across the storefront. Both businesses link to one another within the buying/learning journey. It is isolated from deployed `main`; do not merge or replace the existing public site without a further user request. See `docs/FORWARD-INTEGRATION.md` for the imported course facts, provenance and checks.
 
+## Published course repository
+
+The user subsequently explicitly authorized replacing `tsglee/coffee-beginner-course` with this version. Its `main` commit `bc665046810f072f874a43fbb0e611a9a10cd077` is deployed at https://tsglee.github.io/coffee-beginner-course/. The production checkout is `/Users/tsglee/Documents/coffee-beginner-course`; use its own README and handoff for future production edits. The runtime matches this source at `74cdd4118c5d15801b45f48ce88e148c312a482d`; deployment docs, project-path tests and package metadata were adapted there. Original course content is backed up by tag `before-forward-integration-20261022`. `coffee-site/main` remains unchanged.
+
 ## 1. Scope and design
 
 The user asked for a distinctive photographic coffee brand site, inspired by the full-screen, slowly fading images on Encounter Coffee's reference site. The implementation is original project code and illustrative images; it is not a copy of that site's source or its merchant backend.

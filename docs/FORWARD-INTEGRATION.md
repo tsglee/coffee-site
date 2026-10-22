@@ -69,3 +69,7 @@ node tests/course.test.cjs
 此輪檢查中英文首頁在 320、390、768、1440px 的課程卡與雙入口，均無橫向溢出；桌面卡片約 320px 高。相關 9 項語言／課程檢查通過。
 
 課程名稱依使用者要求只保留「好好手沖」，中英文頁面均使用中文課名；首頁邀請文案改為「買自己喜歡的豆，煮自己的風格」。課程頁、教材標題、商品頁課程推薦與英文中繼資料同步移除舊英文課名。
+
+## 正式發布至課程 repo
+
+使用者已明確授權以此版本替代課程 repo。`tsglee/coffee-beginner-course` 的 `main` 已發布整合版，提交 `bc665046810f072f874a43fbb0e611a9a10cd077`，公開網址為 https://tsglee.github.io/coffee-beginner-course/。`coffee-site/main` 保持原版。本檔上方尚未合併 main 的紀錄僅指 `coffee-site`；正式站後續維護請使用 `/Users/tsglee/Documents/coffee-beginner-course` 及該 repo 的發布文件。

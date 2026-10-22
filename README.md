@@ -2,11 +2,14 @@
 
 The `forward` branch combines a bilingual roasted-coffee storefront with the 好好手沖 workshop under 佛我咖啡 / FORWARD COFFEE. It is not merged into the existing public `main` site. See [course integration notes](docs/FORWARD-INTEGRATION.md) and the [five-coffee catalog guide](docs/FORWARD-CATALOG.md).
 
+The user subsequently authorized replacing the course repository with this version. It is published at `coffee-beginner-course` main commit `bc665046810f072f874a43fbb0e611a9a10cd077`; future production edits should use `/Users/tsglee/Documents/coffee-beginner-course`. The separate `coffee-site` main was not changed.
+
 A bilingual, responsive roasted-coffee storefront and operable administration demo. Plain HTML, CSS and JavaScript; no build step, npm installation, backend or database is required.
 
-- Live Chinese site: https://tsglee.github.io/coffee-site/?lang=zh
-- Live English site: https://tsglee.github.io/coffee-site/?lang=en
-- Repository: https://github.com/tsglee/coffee-site
+- Live integrated Chinese site: https://tsglee.github.io/coffee-beginner-course/?lang=zh
+- Live integrated English site: https://tsglee.github.io/coffee-beginner-course/?lang=en
+- Source repository: https://github.com/tsglee/coffee-site
+- Published repository: https://github.com/tsglee/coffee-beginner-course (`main`)
 - **For another AI agent: read [docs/AGENT-HANDOFF.md](docs/AGENT-HANDOFF.md) first.**
 
 ## Run locally
