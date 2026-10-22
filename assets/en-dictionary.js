@@ -888,5 +888,7 @@ window.COFFEE_EN = {
   "波旁／卡杜拉（示範設定）": "Bourbon / Caturra (sample specification)",
   "薇薇特南果水洗熟豆示意": "Illustration of Huehuetenango washed roasted beans",
   "瓜地馬拉高地咖啡產區情境示意": "Illustration of a Guatemalan highland coffee-growing landscape",
-  "瓜地馬拉產區示意": "Guatemala origin illustration"
+  "瓜地馬拉產區示意": "Guatemala origin illustration",
+  "把喜歡的豆，沖成自己的好咖啡。": "Turn the beans you love into a cup of your own.",
+  "NT$1,800／人": "NT$1,800 / person"
 };
