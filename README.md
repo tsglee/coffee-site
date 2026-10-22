@@ -1,4 +1,6 @@
-# 一遇 / Encounter Coffee
+# 佛我咖啡 / Forward Coffee
+
+The `forward` branch combines a bilingual roasted-coffee storefront with the Good Good Pour workshop under 佛我咖啡 / FORWARD COFFEE. It is not merged into the existing public `main` site. See [course integration notes](docs/FORWARD-INTEGRATION.md).
 
 A bilingual, responsive roasted-coffee storefront and operable administration demo. Plain HTML, CSS and JavaScript; no build step, npm installation, backend or database is required.
 
@@ -22,6 +24,7 @@ Open http://127.0.0.1:4173/?lang=en or http://127.0.0.1:4173/?lang=zh. Stop the 
 | File | Purpose |
 | --- | --- |
 | `index.html` | Three-photo hero carousel, four palettes, featured coffees, selection story, brew guide and FAQ |
+| `courses.html` | Complete Good Good Pour workshop, instructors, materials, FAQ and original LINE inquiry link |
 | `shop.html` | Ten roasted coffees with origin/roast filters, English/Chinese search and sorting |
 | `product.html?id=guji` | Six-image gallery, 250g/500g bags, stock, flavor, origin, roast date and duration |
 | `checkout.html` | Shared demo cart, weight/price calculations and local demo orders |
@@ -37,9 +40,10 @@ Node.js is needed only for tests (Node 18+ recommended):
 ```sh
 node tests/store.test.cjs
 node tests/i18n.test.cjs
+node tests/course.test.cjs
 ```
 
-There are 16 logic/localization checks. Browser viewport validation is documented in [docs/ENGLISH-RWD.md](docs/ENGLISH-RWD.md).
+There are 21 store/localization/course checks. Browser viewport validation is documented in [docs/ENGLISH-RWD.md](docs/ENGLISH-RWD.md).
 
 ## Package a committed snapshot
 

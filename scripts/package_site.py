@@ -82,7 +82,7 @@ def package(root, output_dir, release_date):
             files[name] = {"bytes": len(data), "sha256": hashlib.sha256(data).hexdigest()}
     manifest = {
         "format_version": 1,
-        "name": "一遇 / Encounter Coffee",
+        "name": "佛我咖啡 / Forward Coffee",
         "release_date": release_date.isoformat(),
         "repository_url": REPOSITORY,
         "public_url": PUBLIC_URL,
@@ -102,7 +102,7 @@ def package(root, output_dir, release_date):
             info.create_system = 3
             info.external_attr = (stat.S_IFREG | 0o644) << 16
             archive.writestr(info, data, compresslevel=9)
-        archive.comment = b"Encounter Coffee committed source and agent handoff"
+        archive.comment = b"Forward Coffee committed source and agent handoff"
     verified = verify(target)
     digest = hashlib.sha256(target.read_bytes()).hexdigest()
     print(json.dumps({"zip": str(target.resolve()), "bytes": target.stat().st_size, "sha256": digest, "commit": commit, "source_files_verified": len(verified["files"])}, indent=2))

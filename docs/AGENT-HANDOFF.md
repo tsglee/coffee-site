@@ -1,12 +1,16 @@
-# Agent handoff: 一遇 / Encounter Coffee
+# Agent handoff: 佛我咖啡 / Forward Coffee
 
 This document is the starting point for another AI agent receiving the ZIP. It describes the current implementation, not a proposal. Package provenance and exact file hashes are in the ZIP's root `RELEASE-MANIFEST.json`; a regular Git clone has no generated manifest until a package is built.
+
+## Branch update: forward (2026-10-22)
+
+The user requested the exact branch name `forward`, the new brand 佛我咖啡 / FORWARD COFFEE, and integration of the local `coffee_class_site` course. This branch adds `courses.html` and course assets/content while preserving the bean store. It is isolated from deployed `main`; do not merge or replace the existing public site without a further user request. See `docs/FORWARD-INTEGRATION.md` for the imported course facts, provenance and checks.
 
 ## 1. Scope and design
 
 The user asked for a distinctive photographic coffee brand site, inspired by the full-screen, slowly fading images on Encounter Coffee's reference site. The implementation is original project code and illustrative images; it is not a copy of that site's source or its merchant backend.
 
-The brand is **一遇**, with **ENCOUNTER COFFEE** in English. Do not restore the previous 四選淨豆 / Pure Select branding. The old `pure-select-*` storage keys remain intentionally compatible with existing browsers. The store model maps the previous default shop name to the current default without discarding orders or inventory; custom shop names are preserved.
+The brand is **佛我咖啡**, with **FORWARD COFFEE** in English. Do not restore the previous 四選淨豆 / Pure Select branding. The old `pure-select-*` storage keys remain intentionally compatible with existing browsers. The store model maps the previous default shop name to the current default without discarding orders or inventory; custom shop names are preserved.
 
 Implemented features:
 
@@ -35,7 +39,7 @@ All runtime images are local under `assets/`, including the generated JPEG asset
 
 | Path | Responsibility |
 | --- | --- |
-| Seven root HTML files | Page shells, static homepage/editorial content and ordered script/style loading |
+| Eight root HTML files | Page shells, static homepage/editorial content and ordered script/style loading |
 | `assets/catalog-data.js` | `window.COFFEE_SEED`: initial products, batches, orders, cart, ledger and settings |
 | `assets/store.js` | `window.CoffeeStore`: validation, transactions, local persistence and state-change events |
 | `assets/commerce.js` | Storefront rendering, filters, product galleries, quantity/weight calculations and checkout |
@@ -118,9 +122,10 @@ Run from the project root:
 ```sh
 node tests/store.test.cjs
 node tests/i18n.test.cjs
+node tests/course.test.cjs
 ```
 
-Expected: 11 store checks and 5 localization checks pass. They cover valid seed/gallery/SKUs, live-price order snapshots, overselling, cancellation, shipping/tracking, batch idempotency, storage rollback, import validation, historical product deletion, old-brand migration, English product copy, link/query/hash preservation and raw-data integrity.
+Expected on `forward`: 12 store checks, 5 localization checks and 4 course-integration checks pass. They cover valid seed/gallery/SKUs, live-price order snapshots, overselling, cancellation, shipping/tracking, batch idempotency, storage rollback, import validation, historical product deletion, old-brand migration, English product copy, link/query/hash preservation and raw-data integrity.
 
 Also check JavaScript syntax with `node --check` for changed files, local asset/link references and `git diff --check`. Use a real browser for interactions and visual verification. Previous viewport checks: 320×740, 390×844, 768×1024, 1280×900, and an 844×390 landscape homepage. Ten English product pages have been checked at 320px; the long Mandheling origin/altitude field exposed an overflow and was fixed using shrinkable grid columns.
 

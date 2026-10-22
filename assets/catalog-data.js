@@ -1172,7 +1172,7 @@ window.COFFEE_SEED = {
     }
   ],
   "settings": {
-    "shopName": "一遇",
+    "shopName": "佛我咖啡",
     "shippingFee": 60,
     "freeShipping": 1500,
     "carouselSeconds": 6,
